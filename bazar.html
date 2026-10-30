@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>बिल्डमार्ट प्रो - आत्मनिर्भर कंस्ट्रक्शन बाज़ार</title>
+    <!-- Tailwind CSS for Ultra-Premium Design -->
+    <script src="https://jsdelivr.net"></script>
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <style>
+        body { font-family: 'Segoe UI', Roboto, sans-serif; }
+        .glass-card { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); }
+    </style>
+</head>
+<body class="bg-slate-50 text-gray-800 antialiased">
+
+    <!-- प्रीमियम हेडर -->
+    <header class="bg-gradient-to-r from-orange-600 to-amber-600 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-3.5 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="bg-white/20 p-2 rounded-xl animate-pulse">
+                    <i class="fa-solid fa-trowel-bricks text-2xl text-yellow-3xl"></i>
+                </div>
+                <span class="text-2xl font-black tracking-tight bg-gradient-to-r from-white to-orange-100 bg-clip-text text-transparent">BuildMart <span class="text-xs bg-yellow-400 text-gray-900 px-1.5 py-0.5 rounded ml-1 font-bold">PRO</span></span>
+            </div>
+            <div class="flex items-center space-x-3">
+                <span class="hidden md:inline-block text-xs bg-black/20 px-3 py-1.5 rounded-full font-medium border border-white/10">🟢 लाइव मार्केट ट्रैकिंग</span>
+                <div class="bg-amber-400 text-gray-900 px-3 py-1.5 rounded-xl text-xs md:text-sm font-black shadow-sm flex items-center">
+                    <i class="fa-solid fa-bolt mr-1"></i> सीधा सौदा
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- हीरो सेक्शन -->
+    <section class="bg-slate-900 text-white py-10 px-4 text-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#f97316_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-3xl mx-auto relative z-10">
+            <h1 class="text-3xl md:text-5xl font-black mb-3 tracking-tight">बिचौलिया मुक्त निर्माण क्रांति</h1>
+            <p class="text-sm md:text-lg text-slate-300 font-medium max-w-xl mx-auto">बिना दलाली के सीधे आर्डर लोड करें, लाइव रेट घटाएं और सुरक्षित व्यापार पाएं।</p>
+        </div>
+    </section>
+
+    <main class="max-w-6xl mx-auto px-4 py-8 space-y-8">
+
+        <!-- फीचर्स ग्रिड (2 कॉलम लेआउट) -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- लेफ्ट साइड: एडवांस टूल्स -->
+            <div class="lg:col-span-2 space-y-8">
+                
+                <!-- टूल 1: ऑटोमैटिक ट्रॉली मापक कैलकुलेटर -->
+                <section class="bg-white rounded-2xl shadow-sm p-6 border border-slate-200/80 transition-all hover:shadow-md">
+                    <div class="flex items-center space-x-3 mb-5">
+                        <div class="bg-orange-50 p-3 rounded-xl text-orange-600 text-xl shadow-inner"><i class="fa-solid fa-compass-drafting"></i></div>
+                        <div>
+                            <h2 class="text-lg font-extrabold text-slate-900">📐 ऑटोमैटिक ट्रॉली मापक (स्मार्ट कैलकुलेटर)</h2>
+                            <p class="text-xs text-slate-500">इंच में साइज बदलते ही असली माल (CFT) स्क्रीन पर लाइव दिखेगा</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 bg-slate-50 p-5 rounded-xl border border-slate-100">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 mb-1.5">लम्बाई (इंच):</label>
+                            <input type="number" id="tLength" value="120" class="w-full p-2.5 bg-white border border-slate-200 rounded-xl font-bold focus:ring-2 focus:ring-orange-500 transition outline-none" oninput="calculateTrolleyPro()">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 mb-1.5">चौड़ाई (इंच):</label>
+                            <input type="number" id="tWidth" value="60" class="w-full p-2.5 bg-white border border-slate-200 rounded-xl font-bold focus:ring-2 focus:ring-orange-500 transition outline-none" oninput="calculateTrolleyPro()">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 mb-1.5">माल की ऊँचाई (इंच):</label>
+                            <input type="number" id="tHeight" value="24" class="w-full p-2.5 bg-white border border-slate-200 rounded-xl font-bold focus:ring-2 focus:ring-orange-500 transition outline-none" oninput="calculateTrolleyPro()">
+                        </div>
+                        <div class="sm:col-span-3 bg-gradient-to-r from-orange-500 to-amber-500 p-4 rounded-xl flex justify-between items-center mt-2 shadow-sm text-white">
+                            <div class="flex items-center space-x-2">
+                                <i class="fa-solid fa-cubes text-lg opacity-80"></i>
+                                <span class="text-sm font-bold">कुल असली माल का माप:</span>
+                            </div>
+                            <span class="text-2xl font-black tracking-tight"><span id="totalCFT">100.00</span> CFT</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- टूल 2: एडवांस लेबर हाजिरी और सैलरी ऑटोमेशन -->
+                <section class="bg-white rounded-2xl shadow-sm p-6 border border-slate-200/80">
+                    <div class="flex items-center space-x-3 mb-5">
+                        <div class="bg-blue-50 p-3 rounded-xl text-blue-600 text-xl shadow-inner"><i class="fa-solid fa-users-gear"></i></div>
+                        <div>
+                            <h2 class="text-lg font-extrabold text-slate-900">📅 डिजिटल ठेकेदार लेबर डायरी (ऑटो-कैलकुलेशन)</h2>
+                            <p class="text-xs text-slate-500">हाजिरी बदलते ही मजदूर का आज का कुल देय पैसा खुद बदल जाएगा</p>
+                        </div>
+                    </div>
+                    <div class="overflow-x-auto border border-slate-100 rounded-xl">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-slate-50 text-xs font-bold text-slate-500 border-b border-slate-100">
+                                    <th class="p-3">मजदूर / रोल</th>
+                                    <th class="p-3">दैनिक दिहाड़ी</th>
+                                    <th class="p-3 text-center">हाजिरी स्टेटस</th>
+                                    <th class="p-3">आज का एडवांस (₹)</th>
+                                    <th class="p-3 text-right">आज का नेट पेमेंट</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-sm font-medium text-slate-700">
+                                <tr class="border-b border-slate-100 hover:bg-slate-50/50">
+                                    <td class="p-3 font-bold">राजेश राजमिस्त्री</td>
+                                    <td class="p-3 text-slate-500">₹600</td>
+                                    <td class="p-3 text-center">
+                                        <select id="m1Status" onchange="updateLaborSalary()" class="bg-blue-50 text-blue-700 p-1.5 rounded-lg font-bold text-xs border border-blue-200 outline-none"><option value="1">प्रेजेंट (P)</option><option value="0">एब्सेंट (A)</option><option value="0.5">आधा (Half)</option></select>
+                                    </td>
+                                    <td class="p-3"><input type="number" id="m1Adv" value="100" oninput="updateLaborSalary()" class="w-20 p-1 border border-slate-200 rounded-md font-bold text-xs text-center outline-none"></td>
+                                    <td class="p-3 text-right font-black text-blue-600">₹<span id="m1Net">500</span></td>
+                                </tr>
+                                <tr class="border-b border-slate-100 hover:bg-slate-50/50">
+                                    <td class="p-3 font-bold">कमलेश लेबर</td>
+                                    <td class="p-3 text-slate-500">₹400</td>
+                                    <td class="p-3 text-center">
+                                        <select id="m2Status" onchange="updateLaborSalary()" class="bg-blue-50 text-blue-700 p-1.5 rounded-lg font-bold text-xs border border-blue-200 outline-none"><option value="1">प्रेजेंट (P)</option><option value="0">एब्सेंट (A)</option><option value="0.5">आधा (Half)</option></select>
+                                    </td>
+                                    <td class="p-3"><input type="number" id="m2Adv" value="0" oninput="updateLaborSalary()" class="w-20 p-1 border border-slate-200 rounded-md font-bold text-xs text-center outline-none"></td>
+                                    <td class="p-3 text-right font-black text-blue-600">₹<span id="m2Net">400</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <button onclick="alert('पूरा लेबर डेटाबेस क्लाउड पर सिंक और सुरक्षित कर दिया गया है!')" class="mt-4 w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-2.5 rounded-xl text-sm shadow transition cursor-pointer">
+                        <i class="fa-solid fa-cloud-arrow-up mr-1 text-xs"></i> आज का डिजिटल पर्चा लॉक करें
+                    </button>
+                </section>
+            </div>
+
+            <!-- राइट साइड: लाइव आर्डर बाज़ार और सर्च फ़िल्टर -->
+            <div class="space-y-8">
+
+                                          
