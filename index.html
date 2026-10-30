@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BuildMart - Construction Marketplace</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#f5f6f8;color:#172033}
+header{background:#101b2d;color:white;padding:20px 6%;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:25px;font-weight:bold;color:#ffb52e}
+nav a{color:white;text-decoration:none;margin-left:18px;font-size:14px}
+.hero{background:linear-gradient(120deg,#10213a,#24476b);color:white;padding:65px 7%;text-align:center}
+.hero h1{font-size:38px;margin-bottom:15px}
+.hero p{color:#d6e0ec;font-size:16px;margin-bottom:25px}
+.search{background:white;padding:10px;border-radius:10px;display:flex;max-width:650px;margin:auto;gap:8px}
+.search input{flex:1;min-width:0;padding:13px;border:0;outline:0;font-size:15px}
+button{background:#ffae22;color:#182235;border:0;padding:13px 20px;border-radius:7px;font-weight:bold;cursor:pointer}
+section{padding:40px 7%}
+h2{margin-bottom:22px;font-size:25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:15px}
+.card{background:white;padding:22px 12px;text-align:center;border-radius:12px;box-shadow:0 3px 14px #0000000b}
+.icon{font-size:35px;margin-bottom:10px}
+.card h3{font-size:16px}
+.info{background:#fff;border-radius:12px;padding:25px;line-height:1.8}
+footer{background:#101b2d;color:white;text-align:center;padding:25px}
+@media(max-width:600px){header{padding:16px 5%}nav a{margin-left:8px;font-size:12px}.hero h1{font-size:29px}.search{flex-wrap:wrap}.search input{width:100%;flex-basis:100%}}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">BUILD MART</div>
+<nav>
+<a href="#categories">Categories</a>
+<a href="#about">About</a>
+<a href="#supplier">Become Supplier</a>
+</nav>
+</header>
+
+<div class="hero">
+<h1>Build Your Dream. Find Your Supplier.</h1>
+<p>रेत से लेकर सरिया तक, निर्माण सामग्री अब आपके आसपास।</p>
+<div class="search">
+<input id="location" placeholder="अपना शहर या पिनकोड लिखें">
+<button onclick="searchSuppliers()">Find Suppliers</button>
+</div>
+</div>
+
+<section id="categories">
+<h2>Explore Construction Materials</h2>
+<div class="grid">
+<div class="card"><div class="icon">🏖️</div><h3>Sand / रेत</h3></div>
+<div class="card"><div class="icon">🪨</div><h3>Gitti / गिट्टी</h3></div>
+<div class="card"><div class="icon">🧱</div><h3>Bricks / ईंट</h3></div>
+<div class="card"><div class="icon">🏗️</div><h3>Cement / सीमेंट</h3></div>
+<div class="card"><div class="icon">🔩</div><h3>Steel / सरिया</h3></div>
+<div class="card"><div class="icon">🚛</div><h3>Other Materials</h3></div>
+</div>
+</section>
+
+<section id="supplier">
+<div class="info">
+<h2>Are You a Material Supplier?</h2>
+<p>अपने बिजनेस को ऑनलाइन लाएँ और आसपास के ग्राहकों तक पहुँचें।</p><br>
+<button onclick="alert('Supplier registration coming soon!')">Register as Supplier</button>
+</div>
+</section>
+
+<section id="about">
+<div class="info">
+<h2>About BuildMart</h2>
+<p>BuildMart एक construction materials marketplace है जहाँ ग्राहक और सप्लायर एक ही प्लेटफॉर्म पर जुड़ सकेंगे। हमारा लक्ष्य ग्राहकों को उनके आसपास 150–250 KM के क्षेत्र में सही सप्लायर और बेहतर कीमतें उपलब्ध कराना है।</p>
+</div>
+</section>
+
+<footer>
+<h3>BUILD MART</h3>
+<p>Smart Construction Material Marketplace</p>
+<p>© 2026 BuildMart. All Rights Reserved.</p>
+</footer>
+
+<script>
+function searchSuppliers(){
+let location=document.getElementById('location').value.trim();
+if(!location){alert('कृपया अपनी लोकेशन लिखें।');return;}
+alert('आपकी लोकेशन: '+location+'\nSupplier search system जल्द जोड़ा जाएगा।');
+}
+</script>
+</body>
+  </html>
