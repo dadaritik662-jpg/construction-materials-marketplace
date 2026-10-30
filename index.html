@@ -1,90 +1,68 @@
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BuildMart - Construction Marketplace</title>
+<!DOCTYPE html><html lang="hi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#101b2d"><title>BuildMart - निर्माण सामग्री मार्केटप्लेस</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,sans-serif;background:#f5f6f8;color:#172033}
-header{background:#101b2d;color:white;padding:20px 6%;display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:25px;font-weight:bold;color:#ffb52e}
-nav a{color:white;text-decoration:none;margin-left:18px;font-size:14px}
-.hero{background:linear-gradient(120deg,#10213a,#24476b);color:white;padding:65px 7%;text-align:center}
-.hero h1{font-size:38px;margin-bottom:15px}
-.hero p{color:#d6e0ec;font-size:16px;margin-bottom:25px}
-.search{background:white;padding:10px;border-radius:10px;display:flex;max-width:650px;margin:auto;gap:8px}
-.search input{flex:1;min-width:0;padding:13px;border:0;outline:0;font-size:15px}
-button{background:#ffae22;color:#182235;border:0;padding:13px 20px;border-radius:7px;font-weight:bold;cursor:pointer}
-section{padding:40px 7%}
-h2{margin-bottom:22px;font-size:25px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:15px}
-.card{background:white;padding:22px 12px;text-align:center;border-radius:12px;box-shadow:0 3px 14px #0000000b}
-.icon{font-size:35px;margin-bottom:10px}
-.card h3{font-size:16px}
-.info{background:#fff;border-radius:12px;padding:25px;line-height:1.8}
-footer{background:#101b2d;color:white;text-align:center;padding:25px}
-@media(max-width:600px){header{padding:16px 5%}nav a{margin-left:8px;font-size:12px}.hero h1{font-size:29px}.search{flex-wrap:wrap}.search input{width:100%;flex-basis:100%}}
-</style>
-</head>
-<body>
-<header>
-<div class="logo">BUILD MART</div>
-<nav>
-<a href="#categories">Categories</a>
-<a href="#about">About</a>
-<a href="#supplier">Become Supplier</a>
-</nav>
-</header>
-
-<div class="hero">
-<h1>Build Your Dream. Find Your Supplier.</h1>
-<p>रेत से लेकर सरिया तक, निर्माण सामग्री अब आपके आसपास।</p>
-<div class="search">
-<input id="location" placeholder="अपना शहर या पिनकोड लिखें">
-<button onclick="searchSuppliers()">Find Suppliers</button>
-</div>
-</div>
-
-<section id="categories">
-<h2>Explore Construction Materials</h2>
-<div class="grid">
-<div class="card"><div class="icon">🏖️</div><h3>Sand / रेत</h3></div>
-<div class="card"><div class="icon">🪨</div><h3>Gitti / गिट्टी</h3></div>
-<div class="card"><div class="icon">🧱</div><h3>Bricks / ईंट</h3></div>
-<div class="card"><div class="icon">🏗️</div><h3>Cement / सीमेंट</h3></div>
-<div class="card"><div class="icon">🔩</div><h3>Steel / सरिया</h3></div>
-<div class="card"><div class="icon">🚛</div><h3>Other Materials</h3></div>
-</div>
-</section>
-
-<section id="supplier">
-<div class="info">
-<h2>Are You a Material Supplier?</h2>
-<p>अपने बिजनेस को ऑनलाइन लाएँ और आसपास के ग्राहकों तक पहुँचें।</p><br>
-<button onclick="alert('Supplier registration coming soon!')">Register as Supplier</button>
-</div>
-</section>
-
-<section id="about">
-<div class="info">
-<h2>About BuildMart</h2>
-<p>BuildMart एक construction materials marketplace है जहाँ ग्राहक और सप्लायर एक ही प्लेटफॉर्म पर जुड़ सकेंगे। हमारा लक्ष्य ग्राहकों को उनके आसपास 150–250 KM के क्षेत्र में सही सप्लायर और बेहतर कीमतें उपलब्ध कराना है।</p>
-</div>
-</section>
-
-<footer>
-<h3>BUILD MART</h3>
-<p>Smart Construction Material Marketplace</p>
-<p>© 2026 BuildMart. All Rights Reserved.</p>
-</footer>
-
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:system-ui,Arial,sans-serif;background:#f5f6f8;color:#172033;padding-bottom:70px}
+header{background:#101b2d;color:#fff;padding:14px 5%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:5}
+.logo{font-size:22px;font-weight:800;color:#ffb52e}nav{display:flex;gap:12px;overflow-x:auto}nav a{color:#fff;text-decoration:none;font-size:13px;white-space:nowrap}
+.hero{background:linear-gradient(120deg,#10213a,#24476b);color:#fff;padding:45px 6%;text-align:center}.hero h1{font-size:30px;margin-bottom:10px}.hero p{color:#d6e0ec;margin-bottom:20px}
+.search{background:#fff;padding:8px;border-radius:10px;display:flex;gap:6px;max-width:650px;margin:auto;flex-wrap:wrap}.search input,.search select{flex:1 1 140px;padding:12px;border:1px solid #e3e6ea;border-radius:7px;font-size:15px}
+button,.b{background:#ffae22;color:#182235;border:0;padding:11px 16px;border-radius:7px;font-weight:700;cursor:pointer;text-decoration:none;font-size:14px;display:inline-block}.b.g{background:#25d366;color:#fff}.b.o{background:#e8edf3}
+section{padding:30px 5%}h2{font-size:22px;margin-bottom:14px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px}
+.card{background:#fff;padding:16px 10px;text-align:center;border-radius:12px;box-shadow:0 3px 14px #0000000b}.cat{cursor:pointer}.icon{font-size:32px}
+.sup{text-align:left;padding:14px}.sup h3{font-size:16px}.chip{display:inline-block;background:#fff3d9;border-radius:20px;padding:4px 10px;margin:4px 4px 4px 0;font-size:13px}.act{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.tag{font-size:11px;background:#e8edf3;border-radius:5px;padding:2px 6px}.box{background:#fff;border-radius:12px;padding:18px;line-height:1.7}
+label{display:block;font-size:14px;margin:8px 0 3px;font-weight:600}input,select{width:100%;padding:11px;border:1px solid #d5dae1;border-radius:7px;font-size:15px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:8px}.res{margin-top:12px;background:#fff3d9;border-radius:9px;padding:12px;line-height:1.8}
+#m{position:fixed;inset:0;background:#000a;display:none;align-items:flex-end;z-index:9}#m>div{background:#fff;width:100%;padding:18px;border-radius:16px 16px 0 0;max-height:90vh;overflow:auto}
+.bar{position:fixed;bottom:0;left:0;right:0;background:#101b2d;display:flex;justify-content:space-around;padding:8px 0 calc(8px + env(safe-area-inset-bottom,0px));z-index:6}.bar a{color:#fff;text-decoration:none;font-size:12px;text-align:center}
+footer{background:#101b2d;color:#fff;text-align:center;padding:22px;font-size:13px}
+</style></head><body>
+<header><div class="logo">BUILD MART</div><nav><a href="#find">सप्लायर</a><a href="#tools">टूल्स</a><a href="#rates">रेट</a><a href="#supplier">सप्लायर बनें</a><a href="#my">मेरी पूछताछ</a></nav></header>
+<div class="hero"><h1>सीधे मालिक से खरीदें, कमीशन नहीं</h1><p>रेत, गिट्टी, ईंट, सीमेंट, सरिया, ट्रक – अपने आसपास के सप्लायर से सीधी बात।</p>
+<div class="search"><input id="loc" placeholder="शहर या पिनकोड" oninput="list()"><select id="cat" onchange="list()"></select><button onclick="go('find')">खोजें</button></div></div>
+<section><div class="grid" id="cats"></div></section>
+<section id="find"><h2>आसपास के सप्लायर</h2><div id="list" class="grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))"></div></section>
+<section id="tools"><h2>🧮 सामान का हिसाब (कैलकुलेटर)</h2><div class="box">
+<label>क्या बनाना है?</label><select id="ct" onchange="calc()"><option value="slab">छत की ढलाई (स्लैब)</option><option value="w9">दीवार (9 इंच)</option><option value="w4">दीवार (4.5 इंच)</option></select>
+<div class="row"><div><label>लंबाई (फुट)</label><input id="cl" type="number" value="20" oninput="calc()"></div><div><label id="l2">चौड़ाई (फुट)</label><input id="cw" type="number" value="15" oninput="calc()"></div></div>
+<div id="th"><label>मोटाई (इंच)</label><input id="ctk" type="number" value="5" oninput="calc()"></div>
+<div class="res" id="cr"></div><p style="font-size:12px;margin-top:6px">नोट: यह मोटा अनुमान है (5% बर्बादी जोड़ी गई)। असली मात्रा इंजीनियर से पूछ लें।</p></div></section>
+<section id="rates"><h2>📊 आज के रेट (सप्लायरों के डाले हुए)</h2><div class="box" id="rb"></div></section>
+<section id="supplier"><h2>क्या आप सप्लायर हैं?</h2><div class="box"><p>मुफ़्त लिस्टिंग बनाएँ। ग्राहक सीधे आपको कॉल/WhatsApp करेंगे। एक ही नंबर से दोबारा भरने पर पुरानी लिस्टिंग बदल जाती है।</p>
+<label>नाम / दुकान</label><input id="sn"><div class="row"><div><label>मोबाइल (10 अंक)</label><input id="sp" type="tel" maxlength="10"></div><div><label>पिनकोड</label><input id="sz" maxlength="6"></div></div><label>शहर / गाँव</label><input id="sc">
+<label>जो बेचते हैं – उसका रेट (₹) लिखें, बाकी खाली छोड़ें</label><div id="rf"></div><button style="margin-top:12px" onclick="reg()">लिस्टिंग सेव करें</button><p id="rm" style="margin-top:8px"></p></div></section>
+<section id="my"><h2>📋 मेरी पूछताछ</h2><div class="box" id="ql"></div></section>
+<footer><b>BUILD MART</b><br>सीधा ग्राहक – सीधा मालिक<br>© 2026 BuildMart</footer>
+<div class="bar"><a href="#find">🔍<br>खोजें</a><a href="#tools">🧮<br>हिसाब</a><a href="#rates">📊<br>रेट</a><a href="#supplier">🏪<br>सप्लायर</a><a href="#my">📋<br>पूछताछ</a></div>
+<div id="m" onclick="if(event.target==this)this.style.display='none'"><div id="mb"></div></div>
 <script>
-function searchSuppliers(){
-let location=document.getElementById('location').value.trim();
-if(!location){alert('कृपया अपनी लोकेशन लिखें।');return;}
-alert('आपकी लोकेशन: '+location+'\nSupplier search system जल्द जोड़ा जाएगा।');
-}
-</script>
-</body>
-  </html>
+const C=[['sand','रेत','🏖️','ट्रॉली'],['gitti','गिट्टी','🪨','ट्रॉली'],['brick','ईंट','🧱','1000 ईंट'],['cement','सीमेंट','🏗️','बोरी'],['steel','सरिया','🔩','क्विंटल'],['truck','ट्रक किराया','🚛','प्रति किमी']];
+const $=i=>document.getElementById(i),L=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))||d}catch(x){return d}},W=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(x){}};
+const e=s=>String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+const cn=k=>C.find(c=>c[0]==k);let real=L('bm_s',[]),enq=L('bm_q',[]);
+const samples=[{id:'s1',n:'नमूना: रेत-गिट्टी सप्लायर',city:'पटना',pin:'800001',r:{sand:6500,gitti:7200},s:1},{id:'s2',n:'नमूना: सीमेंट-सरिया स्टोर',city:'पटना',pin:'800001',r:{cement:390,steel:6200,brick:7500},s:1},{id:'s3',n:'नमूना: ट्रक ट्रांसपोर्ट',city:'गया',pin:'823001',r:{truck:45},s:1}];
+function go(i){$(i).scrollIntoView({behavior:'smooth'})}
+$('cat').innerHTML='<option value="">सभी सामान</option>'+C.map(c=>`<option value="${c[0]}">${c[2]} ${c[1]}</option>`).join('');
+$('cats').innerHTML=C.map(c=>`<div class="card cat" onclick="$('cat').value='${c[0]}';list();go('find')"><div class="icon">${c[2]}</div><b>${c[1]}</b></div>`).join('');
+$('rf').innerHTML=C.map(c=>`<div class="row" style="margin-bottom:6px;align-items:center"><span>${c[2]} ${c[1]} <small>(₹/${c[3]})</small></span><input type="number" id="r_${c[0]}" placeholder="रेट"></div>`).join('');
+function card(x){const ch=Object.keys(x.r).map(k=>`<span class="chip">${cn(k)[2]} ${cn(k)[1]}: ₹${x.r[k]}/${cn(k)[3]}</span>`).join('');
+const a=x.s?'<span class="tag">नमूना लिस्टिंग – संपर्क बंद</span>':`<a class="b" href="tel:${x.ph}">📞 कॉल</a><a class="b g" target="_blank" href="https://wa.me/91${x.ph}">WhatsApp</a><button class="b o" onclick="ask('${x.id}')">पूछताछ भेजें</button>`;
+return `<div class="card sup"><h3>${e(x.n)}</h3><small>📍 ${e(x.city)} ${e(x.pin||'')}</small><div>${ch}</div><div class="act">${a}</div></div>`}
+function list(){const q=$('loc').value.trim().toLowerCase(),c=$('cat').value;
+let a=[...real,...samples].filter(x=>(!q||(x.city+x.pin).toLowerCase().includes(q))&&(!c||x.r[c]));if(c)a.sort((x,y)=>x.r[c]-y.r[c]);
+$('list').innerHTML=a.length?a.map(card).join(''):'<div class="box">इस इलाके में अभी कोई सप्लायर नहीं। आप पहले सप्लायर बनें!</div>'}
+function ask(id){const x=real.find(s=>s.id==id);if(!x)return;
+$('mb').innerHTML=`<h2>${e(x.n)} से पूछताछ</h2><label>सामान</label><select id="qm">${Object.keys(x.r).map(k=>`<option value="${k}">${cn(k)[1]}</option>`).join('')}</select><label>कितना चाहिए? (जैसे 2 ट्रॉली)</label><input id="qq"><label>डिलीवरी की जगह</label><input id="qp"><div class="act" style="margin-top:12px"><button onclick="send('${id}')">WhatsApp पर भेजें</button><button class="b o" onclick="$('m').style.display='none'">बंद</button></div>`;$('m').style.display='flex'}
+function send(id){const x=real.find(s=>s.id==id),k=$('qm').value,q=$('qq').value.trim(),p=$('qp').value.trim();if(!q||!p){alert('मात्रा और जगह लिखें');return}
+enq.unshift({n:x.n,ph:x.ph,m:cn(k)[1],q,p,d:new Date().toLocaleDateString('hi-IN')});W('bm_q',enq);showq();$('m').style.display='none';
+window.open(`https://wa.me/91${x.ph}?text=`+encodeURIComponent(`नमस्ते, BuildMart से बोल रहा हूँ। मुझे ${cn(k)[1]} चाहिए: ${q}। डिलीवरी: ${p}। रेट बताइए।`),'_blank')}
+function showq(){$('ql').innerHTML=enq.length?enq.map(z=>`<p>📌 <b>${e(z.m)}</b> – ${e(z.q)} → ${e(z.p)}<br><small>${e(z.n)} · ${e(z.d)} · <a href="tel:${e(z.ph)}">कॉल</a></small></p><hr style="border:0;border-top:1px solid #eee;margin:6px 0">`).join(''):'अभी कोई पूछताछ नहीं भेजी।'}
+function reg(){const n=$('sn').value.trim(),ph=$('sp').value.trim(),c=$('sc').value.trim(),z=$('sz').value.trim(),r={};
+C.forEach(k=>{const v=parseInt($('r_'+k[0]).value);if(v>0)r[k[0]]=v});
+if(!n||!c||!/^\d{10}$/.test(ph)||!Object.keys(r).length){$('rm').textContent='❗ नाम, शहर, 10 अंक का मोबाइल और कम से कम एक रेट भरें।';return}
+real=real.filter(s=>s.ph!=ph);real.unshift({id:'r'+Date.now(),n,ph,city:c,pin:z,r});W('bm_s',real);$('rm').textContent='✅ आपकी लिस्टिंग सेव हो गई!';list();rates()}
+function rates(){const o=C.map(c=>{const v=real.filter(s=>s.r[c[0]]).map(s=>s.r[c[0]]);return v.length?`<p>${c[2]} <b>${c[1]}</b>: औसत ₹${Math.round(v.reduce((a,b)=>a+b)/v.length)} (सबसे कम ₹${Math.min(...v)}) / ${c[3]}</p>`:''}).join('');$('rb').innerHTML=o||'अभी कोई असली रेट नहीं। सप्लायर लिस्टिंग बनाएँगे तो यहाँ दिखेंगे।'}
+function calc(){const t=$('ct').value,l=+$('cl').value||0,w=+$('cw').value||0,k=+$('ctk').value||0,s=t=='slab';$('th').style.display=s?'block':'none';$('l2').textContent=s?'चौड़ाई (फुट)':'ऊँचाई (फुट)';
+if(s){const v=l*w*k/12/35.31,d=v*1.54;$('cr').innerHTML=`🏗️ सीमेंट: <b>${Math.ceil(d*1440/5.5/50*1.05)} बोरी</b><br>🏖️ रेत: <b>${(d*1.5/5.5*35.31*1.05).toFixed(0)} घन फुट</b><br>🪨 गिट्टी: <b>${(d*3/5.5*35.31*1.05).toFixed(0)} घन फुट</b><br>🔩 सरिया: लगभग <b>${Math.ceil(v*80*1.05)} किलो</b>`}
+else{const n=Math.ceil(l*w*(t=='w9'?10:5)*1.05);$('cr').innerHTML=`🧱 ईंट: <b>${n}</b><br>🏗️ जोड़ाई के लिए सीमेंट: लगभग <b>${Math.ceil(n/1000*(t=='w9'?9:6))} बोरी</b>`}}
+list();rates();showq();calc();
+</script></body></html>
