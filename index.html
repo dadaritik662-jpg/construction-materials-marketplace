@@ -1,349 +1,161 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>BUILDMART BY ABHI</title>
-<style>
-:root{--bg:#091321;--panel:#111f31;--panel2:#182a40;--gold:#f4bd50;--text:#f5f7fb;--muted:#9aabc0;--line:#2b4059;--green:#31ca91;--red:#ff7777}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif}
-header{background:#0d1b2d;border-bottom:1px solid var(--line);padding:15px 4%;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;position:sticky;top:0;z-index:10}
-.logo{font-size:23px;font-weight:900;color:var(--gold)}.logo span{color:white}
-button{border:0;border-radius:8px;padding:10px 14px;background:var(--gold);color:#111b29;font-weight:bold;cursor:pointer}
-button.secondary{background:#2a405a;color:white}
-button.danger{background:#963e4b;color:white}
-button:hover{filter:brightness(1.1)}
-nav{display:flex;gap:5px;flex-wrap:wrap}
-nav button{background:transparent;color:#c6d2e2;padding:8px;font-size:12px}
-nav button.active{background:var(--gold);color:#111}
-main{max-width:1400px;margin:auto;padding:25px 4%}
-.hero{padding:45px 5%;background:linear-gradient(120deg,#13243a,#263d59);text-align:center;border-radius:18px;margin-bottom:25px}
-.hero h1{font-size:clamp(30px,5vw,52px);margin:8px}.hero h1 span{color:var(--gold)}
-.hero p{color:var(--muted);line-height:1.7}
-.section{display:none}.section.active{display:block}
-h2{font-size:25px;margin:10px 0 20px}h2 span{color:var(--gold)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:17px;margin-bottom:13px}
-.card h3{margin:5px 0 12px}.card p{color:var(--muted);font-size:13px;line-height:1.6}
-input,select,textarea{width:100%;padding:11px;background:#091727;border:1px solid var(--line);border-radius:7px;color:white;margin:6px 0 12px}
-label{font-size:12px;color:#c2cede;display:block}
-textarea{min-height:70px}
-.tabs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:17px}
-.tabs button{background:#243950;color:white;font-size:12px}
-.tabs button.active{background:var(--gold);color:#111}
-.result{background:#091a2a;border-radius:8px;padding:13px;margin-top:12px;color:var(--green);line-height:1.8;overflow-wrap:anywhere}
-.muted{color:var(--muted);font-size:12px}
-.stat{font-size:29px;color:var(--gold);font-weight:bold}
-.tag{background:#173a32;color:#61dfae;border-radius:20px;padding:5px 9px;font-size:11px}
-.toolcard{cursor:pointer;transition:.2s}.toolcard:hover{border-color:var(--gold);transform:translateY(-2px)}
-.tablewrap{overflow-x:auto}
-table{width:100%;border-collapse:collapse;font-size:13px}
-td,th{padding:10px;border-bottom:1px solid var(--line);text-align:left}
-th{color:var(--gold)}
-.notice{background:#302a1c;border-left:4px solid var(--gold);padding:12px;color:#f2d99d;font-size:12px;line-height:1.6;margin:15px 0}
-footer{text-align:center;padding:35px;color:var(--muted);border-top:1px solid var(--line)}
-.hidden{display:none!important}
-@media(max-width:600px){header{position:relative}nav{width:100%}nav button{font-size:11px;padding:7px}main{padding:18px 3%}}
-@media print{header,nav,button,.no-print,footer{display:none!important}body{background:white;color:black}.card{background:white;color:black;border:1px solid #aaa}.result{color:black;background:#eee}}
-</style>
-</head>
-<body>
-
-<header>
- <div class="logo">BUILD<span>MART</span> <small style="font-size:10px">BY ABHI</small></div>
- <nav id="nav">
-  <button class="active" onclick="page('home',this)">Home</button>
-  <button onclick="page('construction',this)">Construction Tools</button>
-  <button onclick="page('projects',this)">Projects</button>
-  <button onclick="page('finance',this)">Finance</button>
-  <button onclick="page('inventory',this)">Inventory</button>
-  <button onclick="page('market',this)">Marketplace</button>
-  <button onclick="page('reports',this)">Reports</button>
- </nav>
- <button class="secondary" onclick="toggleLanguage()" id="lang">हिंदी</button>
-</header>
-
-<main>
-<section id="home" class="section active">
- <div class="hero">
-  <span class="tag">CONSTRUCTION BUSINESS ECOSYSTEM</span>
-  <h1>BUILD SMARTER.<br><span>BUILD BETTER.</span></h1>
-  <p>One platform for construction materials, project planning, business management, finance and professional services.</p>
-  <button onclick="page('construction')">Explore All Tools →</button>
-  <button class="secondary" onclick="page('market')">Open Marketplace</button>
- </div>
- <h2>Business <span>Overview</span></h2>
- <div class="grid">
-  <div class="card"><div class="stat" id="projectCount">0</div><p>Saved Projects</p></div>
-  <div class="card"><div class="stat" id="stockCount">0</div><p>Inventory Items</p></div>
-  <div class="card"><div class="stat" id="businessCount">0</div><p>Business Listings</p></div>
-  <div class="card"><div class="stat" id="reqCount">0</div><p>Customer Requirements</p></div>
- </div>
- <h2>All <span>Modules</span></h2>
- <div class="grid">
-  <div class="card toolcard" onclick="page('construction')"><h3>🏗️ Construction Tools</h3><p>Material, quantity and cost estimators.</p></div>
-  <div class="card toolcard" onclick="page('projects')"><h3>📐 Project Management</h3><p>Projects, BOQ, labour and progress tracking.</p></div>
-  <div class="card toolcard" onclick="page('finance')"><h3>💰 Finance & Accounts</h3><p>GST, profit, invoices, quotations and payments.</p></div>
-  <div class="card toolcard" onclick="page('inventory')"><h3>📦 Inventory</h3><p>Stock, purchases and sales records.</p></div>
-  <div class="card toolcard" onclick="page('market')"><h3>🛒 Marketplace</h3><p>Suppliers, dealers, contractors and rentals.</p></div>
-  <div class="card toolcard" onclick="page('reports')"><h3>📊 Reports</h3><p>PDF printing and CSV exports.</p></div>
- </div>
-</section>
-
-<section id="construction" class="section">
- <h2>Construction <span>Tools</span></h2>
- <div class="tabs" id="constructionTabs"></div>
- <div class="card">
-  <h3 id="toolTitle">Construction Calculator</h3>
-  <div id="toolForm"></div>
-  <button onclick="calculateTool()">Calculate</button>
-  <div class="result" id="toolResult">Enter values and calculate.</div>
- </div>
- <div class="notice">These calculators provide preliminary planning estimates only. Actual quantities depend on drawings, specifications, material sizes, mix designs, site conditions and local standards. Structural work, BOQs and construction decisions must be checked by a qualified civil engineer.</div>
-</section>
-
-<section id="projects" class="section">
- <h2>Project <span>Management</span></h2>
- <div class="grid">
-  <div class="card">
-   <h3>Project Estimator</h3>
-   <label>Project name</label><input id="pname" placeholder="Project name">
-   <label>Project type</label><select id="ptype"><option>Residential</option><option>Commercial</option><option>Industrial</option><option>Infrastructure</option><option>Renovation</option></select>
-   <label>Built-up area (sq ft)</label><input id="parea" type="number">
-   <label>Floors</label><input id="pfloors" type="number" value="1">
-   <label>Indicative rate per sq ft (₹)</label><input id="prate" type="number" value="1800">
-   <button onclick="saveProject()">Estimate & Save Project</button>
-   <div class="result" id="presult"></div>
-  </div>
-  <div class="card">
-   <h3>Labour Cost Calculator</h3>
-   <label>Number of workers</label><input id="workers" type="number">
-   <label>Daily wage per worker (₹)</label><input id="wage" type="number">
-   <label>Working days</label><input id="days" type="number">
-   <button onclick="labourCalc()">Calculate Labour</button>
-   <div class="result" id="labourResult"></div>
-  </div>
-  <div class="card">
-   <h3>Project Timeline Planner</h3>
-   <label>Project stage</label><input id="stage" placeholder="e.g. Foundation">
-   <label>Start date</label><input id="startDate" type="date">
-   <label>Duration (days)</label><input id="duration" type="number">
-   <button onclick="timelineCalc()">Calculate End Date</button>
-   <div class="result" id="timelineResult"></div>
-  </div>
-  <div class="card">
-   <h3>Work Progress Tracker</h3>
-   <label>Task / Work stage</label><input id="task" placeholder="e.g. Brickwork">
-   <label>Completion (%)</label><input id="progress" type="number" min="0" max="100">
-   <button onclick="saveProgress()">Save Progress</button>
-   <div class="result" id="progressResult"></div>
-  </div>
- </div>
- <h3>Saved Projects</h3><div id="projectList" class="grid"></div>
- <h3>Progress Records</h3><div id="progressList" class="grid"></div>
- <h3>BOQ / Material Planner</h3>
- <div class="card">
-  <label>Project</label><input id="boqProject" placeholder="Project name">
-  <label>Material</label><input id="boqMaterial" placeholder="Material name">
-  <label>Quantity</label><input id="boqQty" type="number">
-  <label>Unit</label><input id="boqUnit" placeholder="bags, kg, cft, sq ft">
-  <label>Rate (₹)</label><input id="boqRate" type="number">
-  <button onclick="saveBOQ()">Add BOQ Item</button>
-  <div class="result" id="boqResult"></div>
- </div>
- <div id="boqList" class="grid"></div>
-</section>
-
-<section id="finance" class="section">
- <h2>Finance & <span>Accounts</span></h2>
- <div class="grid">
-  <div class="card">
-   <h3>GST Calculator</h3>
-   <label>Amount before GST (₹)</label><input id="gstAmount" type="number">
-   <label>GST rate (%)</label><select id="gstPercent"><option>5</option><option>12</option><option selected>18</option><option>28</option></select>
-   <button onclick="gstCalc()">Calculate GST</button><div id="gstResult" class="result"></div>
-  </div>
-  <div class="card">
-   <h3>Profit & Margin Calculator</h3>
-   <label>Purchase / Cost (₹)</label><input id="cost" type="number">
-   <label>Selling price (₹)</label><input id="selling" type="number">
-   <button onclick="profitCalc()">Calculate Profit</button><div id="profitResult" class="result"></div>
-  </div>
-  <div class="card">
-   <h3>Discount Calculator</h3>
-   <label>Original price (₹)</label><input id="original" type="number">
-   <label>Discount (%)</label><input id="discount" type="number">
-   <button onclick="discountCalc()">Calculate Discount</button><div id="discountResult" class="result"></div>
-  </div>
-  <div class="card">
-   <h3>Budget Planner</h3>
-   <label>Total budget (₹)</label><input id="budget" type="number">
-   <label>Amount spent (₹)</label><input id="spent" type="number">
-   <button onclick="budgetCalc()">Calculate Budget</button><div id="budgetResult" class="result"></div>
-  </div>
-  <div class="card">
-   <h3>Invoice / Quotation Generator</h3>
-   <label>Document type</label><select id="docType"><option>Invoice</option><option>Quotation</option><option>Purchase Order</option></select>
-   <label>Business name</label><input id="docBusiness" placeholder="Your business">
-   <label>Customer name</label><input id="docCustomer" placeholder="Customer">
-   <label>Item description</label><input id="docItem" placeholder="Material or service">
-   <label>Quantity</label><input id="docQty" type="number">
-   <label>Rate (₹)</label><input id="docRate" type="number">
-   <label>GST (%)</label><input id="docGST" type="number" value="18">
-   <button onclick="generateDocument()">Generate Document</button>
-   <div id="docResult" class="result"></div>
-  </div>
-  <div class="card">
-   <h3>Payment Tracker</h3>
-   <label>Customer / Supplier</label><input id="payName">
-   <label>Amount (₹)</label><input id="payAmount" type="number">
-   <label>Status</label><select id="payStatus"><option>Pending</option><option>Paid</option><option>Partially Paid</option></select>
-   <button onclick="savePayment()">Save Payment</button>
-   <div id="paymentList"></div>
-  </div>
- </div>
-</section>
-
-<section id="inventory" class="section">
- <h2>Inventory <span>Management</span></h2>
- <div class="grid">
-  <div class="card">
-   <h3>Add Stock / Material</h3>
-   <label>Product</label><input id="stockName" placeholder="Cement, Steel etc.">
-   <label>Quantity</label><input id="stockQty" type="number">
-   <label>Unit</label><input id="stockUnit" placeholder="bags, kg, pieces">
-   <label>Purchase rate (₹)</label><input id="stockRate" type="number">
-   <button onclick="addStock()">Add Stock</button>
-  </div>
-  <div class="card">
-   <h3>Record Purchase / Sale</h3>
-   <label>Product name</label><input id="movementName">
-   <label>Quantity</label><input id="movementQty" type="number">
-   <label>Transaction type</label><select id="movementType"><option>Purchase</option><option>Sale</option></select>
-   <button onclick="recordMovement()">Save Transaction</button>
-   <div id="movementResult" class="result"></div>
-  </div>
- </div>
- <h3>Current Stock</h3><div id="stockList" class="grid"></div>
- <h3>Transaction History</h3><div id="movementList" class="grid"></div>
-</section>
-
-<section id="market" class="section">
- <h2>Construction <span>Marketplace</span></h2>
- <input id="marketSearch" placeholder="Search materials, suppliers or services..." oninput="renderMarket()">
- <div class="tabs" id="marketTabs"></div>
- <div id="marketProducts" class="grid"></div>
- <h2>Business <span>Directory</span></h2>
- <div class="card">
-  <label>Business type</label><select id="bizType"><option>Supplier</option><option>Dealer</option><option>Manufacturer</option><option>Contractor</option><option>Transporter</option><option>Architect</option><option>Engineer</option><option>Machinery Rental</option></select>
-  <label>Business name</label><input id="bizName">
-  <label>City</label><input id="bizCity">
-  <label>Contact information</label><input id="bizContact">
-  <label>Products / Services</label><textarea id="bizServices"></textarea>
-  <button onclick="addBusiness()">Add Business Listing</button>
- </div>
- <div id="businessList" class="grid"></div>
- <h2>Customer <span>Requirements</span></h2>
- <div class="card">
-  <label>Customer name</label><input id="reqName">
-  <label>Requirement</label><input id="reqItem" placeholder="Cement, steel, transport etc.">
-  <label>Quantity / Details</label><textarea id="reqDetails"></textarea>
-  <label>City</label><input id="reqCity">
-  <button onclick="addRequirement()">Save Requirement</button>
- </div>
- <div id="requirementList" class="grid"></div>
-</section>
-
-<section id="reports" class="section">
- <h2>Reports & <span>Downloads</span></h2>
- <div class="grid">
-  <div class="card"><h3>PDF Reports</h3><p>Print the current page or save as PDF from your browser.</p><button onclick="window.print()">Print / Save PDF</button></div>
-  <div class="card"><h3>Project CSV</h3><button onclick="csv('projects')">Download Projects</button></div>
-  <div class="card"><h3>BOQ CSV</h3><button onclick="csv('boq')">Download BOQ</button></div>
-  <div class="card"><h3>Inventory CSV</h3><button onclick="csv('stock')">Download Stock</button></div>
-  <div class="card"><h3>Business CSV</h3><button onclick="csv('businesses')">Download Listings</button></div>
-  <div class="card"><h3>Requirements CSV</h3><button onclick="csv('requirements')">Download Requirements</button></div>
-  <div class="card"><h3>Payments CSV</h3><button onclick="csv('payments')">Download Payments</button></div>
-  <div class="card"><h3>Transactions CSV</h3><button onclick="csv('movements')">Download Transactions</button></div>
- </div>
-</section>
-
-</main>
-<footer>
- <div class="logo">BUILDMART BY ABHI</div>
-<p>Building India's Construction Business Ecosystem.</p>
-<p class="muted">BuildMart V3 | Frontend Application</p>
-</footer>
-
-<script>
-const $=id=>document.getElementById(id);
-const load=(key)=>JSON.parse(localStorage.getItem("bm_"+key)||"[]");
-const save=(key,data)=>localStorage.setItem("bm_"+key,JSON.stringify(data));
-let data={
-projects:load("projects"),boq:load("boq"),progress:load("progress"),
-stock:load("stock"),movements:load("movements"),businesses:load("businesses"),
-requirements:load("requirements"),payments:load("payments")
-};
-function page(id,btn){
-document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"));
-$(id).classList.add("active");
-document.querySelectorAll("#nav button").forEach(b=>b.classList.remove("active"));
-if(btn)btn.classList.add("active");
-refresh();
-}
-function number(id){return Number($(id).value)||0}
-function money(n){return "₹"+Number(n).toLocaleString("en-IN",{maximumFractionDigits:2})}
-function safe(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
-function addCard(id,html){$(id).innerHTML=html}
-function cards(id,arr,render){
-$(id).innerHTML=arr.map((x,i)=>`<div class="card">${render(x,i)}</div>`).join("")||"<p class='muted'>No records yet.</p>";
-}
-function removeItem(key,i){data[key].splice(i,1);save(key,data[key]);refresh()}
-
-/* CONSTRUCTION TOOLS */
-const tools=[
-["Cement Calculator","Cement","Bags","Cement requirement depends on the verified mix design and BOQ."],
-["Steel Quantity Estimator","Steel","kg","Steel quantity depends on structural drawings and bar bending schedule."],
-["Bricks Calculator","Bricks","pieces","Requires wall dimensions, brick size, mortar joints and openings."],
-["Sand Calculator","Sand","cubic feet","Enter volume and depth to calculate geometric volume."],
-["Aggregate Calculator","Aggregate","cubic feet","Enter volume and depth to calculate geometric volume."],
-["Concrete Calculator","Concrete","cubic metres","Calculates geometric volume only, not mix proportions."],
-["Tiles Calculator","Tiles","sq ft","Calculates surface area; allow for layout-specific cutting waste."],
-["Paint Calculator","Paint","litres","Uses coverage per litre and number of coats."],
-["Flooring Calculator","Flooring","sq ft","Calculates floor surface area."],
-["Plaster Calculator","Plaster","sq ft","Calculates wall surface area; thickness and mix need verification."],
-["Wall Area Calculator","Wall Area","sq ft","Calculates wall surface area from dimensions."],
-["Excavation Volume Calculator","Excavation","cubic metres","Geometric excavation volume only; site safety and ground conditions need professional review."],
-["Roofing Calculator","Roofing","sq ft","Calculates plan area; roof slope and overlaps need separate allowance."],
-["Waterproofing Calculator","Waterproofing","sq ft","Calculates treatment area; product coverage varies."]
-];
-let toolIndex=0;
-function initTools(){
-$("constructionTabs").innerHTML=tools.map((t,i)=>`<button class="${i===0?'active':''}" onclick="selectTool(${i},this)">${t[1]}</button>`).join("");
-selectTool(0,$("constructionTabs").firstChild);
-}
-function selectTool(i,btn){
-toolIndex=i;
-document.querySelectorAll("#constructionTabs button").forEach(x=>x.classList.remove("active"));
-btn.classList.add("active");
-$("toolTitle").textContent=tools[i][0];
-let form=`<label>Length (feet)</label><input id="tLength" type="number" value="10">
-<label>Width (feet)</label><input id="tWidth" type="number" value="10">
-<label>Height / Depth (feet)</label><input id="tHeight" type="number" value="1">
-<label>Number of coats (paint only)</label><input id="tCoats" type="number" value="2">
-<label>Coverage per litre (paint only)</label><input id="tCoverage" type="number" value="100">
-<label>Thickness in inches (concrete / plaster)</label><input id="tThickness" type="number" value="4">`;
-$("toolForm").innerHTML=form;
-$("toolResult").textContent=tools[i][3];
-}
-function calculateTool(){
-let L=number("tLength"),W=number("tWidth"),H=number("tHeight");
-let area=L*W,volume=area*H/35.3147,thick=number("tThickness");
-let result="";
-if(L<=0||W<=0||H<0)return alert("Enter valid positive dimensions.");
-switch(toolIndex){
-case 0: result="Cement quantity cannot be reliably calculated from area alone. Obtain a verified mix design / BOQ.";break;
-case 1: result="Steel quantity must be taken from structural drawings and bar bending schedule. No safe generic estimate is provided.";break;
-case 2: result="Brick count requires wall length, height, thickness, brick dimensions and openings. Use a project-specific BOQ.";break;
-case 3: case 4: result=`Geo
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#091321"><title>BUILDMART BY ABHI</title></head><body style="background:#091321;color:#f4bd50;font-family:sans-serif;text-align:center;padding-top:35vh;font-weight:700">BUILDMART
+<script>setTimeout(function(){if(!window.__l)document.body.insertAdjacentHTML('afterbegin','<p style="color:#fff;padding:12px;font-weight:400">&#9888; index.html adhuri copy hui. Dobara paste karein.</p>')},4000)</script>
+<script>window.__l=1;(async()=>{try{const u=Uint8Array.from(atob(`
+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
+`),c=>c.charCodeAt(0)),t=await new Response(new Blob([u]).stream().pipeThrough(new DecompressionStream('gzip'))).text();document.open();document.write(t);document.close()}catch(e){document.body.insertAdjacentHTML('beforeend','<p style="color:#fff;font-weight:400;padding:12px">File problem. Dobara paste karein.</p>')}})();</script></body></html>
