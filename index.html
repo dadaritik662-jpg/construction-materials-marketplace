@@ -2,418 +2,348 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BUILDMART BY ABHI | Construction Marketplace</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BUILDMART BY ABHI</title>
 <style>
-:root{
---bg:#08111f;--panel:#111e30;--panel2:#17263b;
---gold:#f5b942;--text:#f3f6fc;--muted:#9aabc1;
---green:#28c78a;--border:#293951;--red:#ff7070;
-}
+:root{--bg:#091321;--panel:#111f31;--panel2:#182a40;--gold:#f4bd50;--text:#f5f7fb;--muted:#9aabc0;--line:#2b4059;--green:#31ca91;--red:#ff7777}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);
-font-family:Arial,sans-serif}
-header{padding:16px 5%;display:flex;justify-content:space-between;
-align-items:center;background:#0c192a;border-bottom:1px solid var(--border);
-position:sticky;top:0;z-index:10;gap:12px;flex-wrap:wrap}
-.logo{font-size:23px;font-weight:900;color:var(--gold)}
-.logo span{color:white}
-button,select,input,textarea{font:inherit}
-button{cursor:pointer;border:0;border-radius:9px;padding:11px 15px;
-background:var(--gold);color:#101827;font-weight:bold}
-button:hover{filter:brightness(1.08)}
-.secondary{background:#263851;color:white}
-.danger{background:#a83c48;color:white}
-nav{display:flex;gap:8px;flex-wrap:wrap}
-nav a{color:#c8d4e4;text-decoration:none;font-size:13px;padding:8px}
-.hero{padding:65px 6%;background:linear-gradient(120deg,#101f34,#172d48);
-text-align:center}
-.hero h1{font-size:clamp(30px,5vw,55px);margin:0 0 15px}
-.hero h1 span{color:var(--gold)}
-.hero p{color:var(--muted);max-width:700px;margin:15px auto 25px;line-height:1.7}
-.wrap{max-width:1200px;margin:auto;padding:28px 5%}
-.section-title{font-size:25px;margin:0 0 20px}
-.section-title span{color:var(--gold)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-.card{background:var(--panel);border:1px solid var(--border);
-border-radius:15px;padding:19px;margin-bottom:12px}
-.card h3{margin:5px 0 12px}
-.card p{color:var(--muted);line-height:1.6;font-size:14px}
-.tag{font-size:11px;color:var(--green);background:#15382f;
-padding:5px 8px;border-radius:20px;display:inline-block}
-.price{font-size:21px;color:var(--gold);font-weight:bold;margin:10px 0}
-input,select,textarea{width:100%;padding:12px;margin:7px 0 13px;
-border-radius:8px;border:1px solid var(--border);
-background:#0b1727;color:white;outline:none}
-label{font-size:13px;color:#bdc9d9}
-textarea{min-height:75px;resize:vertical}
-.result{background:#0a1928;padding:14px;border-radius:9px;
-margin-top:12px;color:var(--green);line-height:1.7;overflow-wrap:anywhere}
-.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
-.tabs button{background:#263851;color:white}
-.tabs button.active{background:var(--gold);color:#101827}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif}
+header{background:#0d1b2d;border-bottom:1px solid var(--line);padding:15px 4%;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;position:sticky;top:0;z-index:10}
+.logo{font-size:23px;font-weight:900;color:var(--gold)}.logo span{color:white}
+button{border:0;border-radius:8px;padding:10px 14px;background:var(--gold);color:#111b29;font-weight:bold;cursor:pointer}
+button.secondary{background:#2a405a;color:white}
+button.danger{background:#963e4b;color:white}
+button:hover{filter:brightness(1.1)}
+nav{display:flex;gap:5px;flex-wrap:wrap}
+nav button{background:transparent;color:#c6d2e2;padding:8px;font-size:12px}
+nav button.active{background:var(--gold);color:#111}
+main{max-width:1400px;margin:auto;padding:25px 4%}
+.hero{padding:45px 5%;background:linear-gradient(120deg,#13243a,#263d59);text-align:center;border-radius:18px;margin-bottom:25px}
+.hero h1{font-size:clamp(30px,5vw,52px);margin:8px}.hero h1 span{color:var(--gold)}
+.hero p{color:var(--muted);line-height:1.7}
+.section{display:none}.section.active{display:block}
+h2{font-size:25px;margin:10px 0 20px}h2 span{color:var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:17px;margin-bottom:13px}
+.card h3{margin:5px 0 12px}.card p{color:var(--muted);font-size:13px;line-height:1.6}
+input,select,textarea{width:100%;padding:11px;background:#091727;border:1px solid var(--line);border-radius:7px;color:white;margin:6px 0 12px}
+label{font-size:12px;color:#c2cede;display:block}
+textarea{min-height:70px}
+.tabs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:17px}
+.tabs button{background:#243950;color:white;font-size:12px}
+.tabs button.active{background:var(--gold);color:#111}
+.result{background:#091a2a;border-radius:8px;padding:13px;margin-top:12px;color:var(--green);line-height:1.8;overflow-wrap:anywhere}
+.muted{color:var(--muted);font-size:12px}
+.stat{font-size:29px;color:var(--gold);font-weight:bold}
+.tag{background:#173a32;color:#61dfae;border-radius:20px;padding:5px 9px;font-size:11px}
+.toolcard{cursor:pointer;transition:.2s}.toolcard:hover{border-color:var(--gold);transform:translateY(-2px)}
+.tablewrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13px}
+td,th{padding:10px;border-bottom:1px solid var(--line);text-align:left}
+th{color:var(--gold)}
+.notice{background:#302a1c;border-left:4px solid var(--gold);padding:12px;color:#f2d99d;font-size:12px;line-height:1.6;margin:15px 0}
+footer{text-align:center;padding:35px;color:var(--muted);border-top:1px solid var(--line)}
 .hidden{display:none!important}
-footer{text-align:center;padding:35px;color:var(--muted);
-border-top:1px solid var(--border)}
-.small{font-size:12px;color:var(--muted)}
-.notice{border-left:4px solid var(--gold);padding:12px;
-background:#29271e;color:#f5dfad;border-radius:5px;
-font-size:13px;line-height:1.6;margin:15px 0}
-.stat{font-size:28px;color:var(--gold);font-weight:bold}
-@media(max-width:600px){
-header{position:relative}
-nav{width:100%}
-nav a{padding:5px}
-.hero{padding:45px 5%}
-.wrap{padding:23px 4%}
-}
-@media print{
-body{background:white;color:black}
-header,nav,button,.no-print,footer{display:none!important}
-.card{background:white;color:black;border:1px solid #aaa;break-inside:avoid}
-input,select{color:black;background:white}
-.result{color:black;background:#eee}
-}
+@media(max-width:600px){header{position:relative}nav{width:100%}nav button{font-size:11px;padding:7px}main{padding:18px 3%}}
+@media print{header,nav,button,.no-print,footer{display:none!important}body{background:white;color:black}.card{background:white;color:black;border:1px solid #aaa}.result{color:black;background:#eee}}
 </style>
 </head>
 <body>
 
 <header>
  <div class="logo">BUILD<span>MART</span> <small style="font-size:10px">BY ABHI</small></div>
- <nav>
-  <a href="#market">Marketplace</a>
-  <a href="#tools">Calculators</a>
-  <a href="#business">Business</a>
-  <a href="#reports">Reports</a>
+ <nav id="nav">
+  <button class="active" onclick="page('home',this)">Home</button>
+  <button onclick="page('construction',this)">Construction Tools</button>
+  <button onclick="page('projects',this)">Projects</button>
+  <button onclick="page('finance',this)">Finance</button>
+  <button onclick="page('inventory',this)">Inventory</button>
+  <button onclick="page('market',this)">Marketplace</button>
+  <button onclick="page('reports',this)">Reports</button>
  </nav>
- <button class="secondary" onclick="toggleLang()" id="langBtn">हिंदी</button>
+ <button class="secondary" onclick="toggleLanguage()" id="lang">हिंदी</button>
 </header>
 
-<section class="hero">
- <div class="tag">INDIA'S CONSTRUCTION BUSINESS PLATFORM</div>
- <h1>BUILD SMARTER.<br><span>BUILD BETTER.</span></h1>
- <p id="heroText">One platform for construction materials, suppliers, contractors,
-transporters, project planning and business management.</p>
- <a href="#market"><button id="exploreBtn">Explore Marketplace →</button></a>
-</section>
-
-<main class="wrap">
-
-<section id="market">
- <h2 class="section-title" data-en="Construction <span>Marketplace</span>" data-hi="कंस्ट्रक्शन <span>मार्केटप्लेस</span>">Construction <span>Marketplace</span></h2>
- <input id="search" placeholder="Search cement, steel, bricks, sand..." oninput="renderProducts()">
- <div class="tabs" id="categories"></div>
- <div class="grid" id="products"></div>
-</section>
-
-<section id="tools" style="padding-top:35px">
- <h2 class="section-title">Smart <span>Construction Tools</span></h2>
- <div class="tabs">
-  <button class="active" onclick="showTool('project',this)">Project Estimator</button>
-  <button onclick="showTool('material',this)">Material Calculator</button>
-  <button onclick="showTool('paint',this)">Paint Calculator</button>
-  <button onclick="showTool('businesscalc',this)">Business Calculators</button>
-  <button onclick="showTool('convert',this)">Unit Converter</button>
+<main>
+<section id="home" class="section active">
+ <div class="hero">
+  <span class="tag">CONSTRUCTION BUSINESS ECOSYSTEM</span>
+  <h1>BUILD SMARTER.<br><span>BUILD BETTER.</span></h1>
+  <p>One platform for construction materials, project planning, business management, finance and professional services.</p>
+  <button onclick="page('construction')">Explore All Tools →</button>
+  <button class="secondary" onclick="page('market')">Open Marketplace</button>
  </div>
-
- <div id="project" class="card tool">
-  <h3>🏗️ Preliminary Project Estimator</h3>
-  <label>Project type</label>
-  <select id="ptype"><option>Residential</option><option>Commercial</option>
-  <option>Industrial</option><option>Renovation</option><option>Infrastructure</option></select>
-  <label>Built-up area (sq ft)</label><input id="area" type="number" placeholder="e.g. 1200">
-  <label>Number of floors</label><input id="floors" type="number" value="1">
-  <label>Estimated cost per sq ft (₹)</label><input id="rate" type="number" value="1800">
-  <button onclick="estimate()">Calculate Estimate</button>
-  <div class="result" id="estimateResult">Your preliminary estimate will appear here.</div>
- </div>
-
- <div id="material" class="card tool hidden">
-  <h3>🧱 Material Quantity Calculator</h3>
-  <label>Choose material</label>
-  <select id="materialType">
-   <option value="cement">Cement (indicative bags)</option>
-   <option value="brick">Bricks (indicative quantity)</option>
-   <option value="sand">Sand (cubic feet)</option>
-   <option value="concrete">Concrete (cubic metres)</option>
-   <option value="tile">Tiles (square feet)</option>
-  </select>
-  <label>Area (square feet)</label><input id="matArea" type="number" placeholder="Enter area">
-  <label>Thickness / depth (inches, where applicable)</label>
-  <input id="depth" type="number" value="4">
-  <button onclick="materialCalc()">Calculate Quantity</button>
-  <div class="result" id="materialResult">Enter your details to calculate.</div>
- </div>
-
- <div id="paint" class="card tool hidden">
-  <h3>🎨 Paint Calculator</h3>
-  <label>Wall area (sq ft)</label><input id="wallArea" type="number">
-  <label>Number of coats</label><input id="coats" type="number" value="2">
-  <label>Coverage per litre (sq ft)</label><input id="coverage" type="number" value="100">
-  <button onclick="paintCalc()">Calculate Paint</button>
-  <div class="result" id="paintResult"></div>
- </div>
-
- <div id="businesscalc" class="card tool hidden">
-  <h3>💼 Business Calculators</h3>
-  <label>Calculation</label>
-  <select id="calcType">
-   <option value="gst">GST Calculator</option>
-   <option value="profit">Profit Calculator</option>
-   <option value="budget">Budget Calculator</option>
-  </select>
-  <label>Amount / Cost (₹)</label><input id="amount" type="number">
-  <label>Second amount / Selling price (₹)</label><input id="amount2" type="number">
-  <label>GST rate (%)</label><input id="gstRate" type="number" value="18">
-  <button onclick="businessCalc()">Calculate</button>
-  <div class="result" id="businessResult"></div>
- </div>
-
- <div id="convert" class="card tool hidden">
-  <h3>📐 Unit Converter</h3>
-  <label>Value</label><input id="convertValue" type="number" value="1">
-  <label>Convert</label>
-  <select id="convertType">
-   <option value="ftm">Feet to Metres</option>
-   <option value="mft">Metres to Feet</option>
-   <option value="sqftsqm">Sq Ft to Sq Metres</option>
-   <option value="sqmsqft">Sq Metres to Sq Ft</option>
-   <option value="kgton">Kg to Metric Tonnes</option>
-   <option value="tonkg">Metric Tonnes to Kg</option>
-   <option value="cftcum">Cubic Feet to Cubic Metres</option>
-   <option value="cumcft">Cubic Metres to Cubic Feet</option>
-  </select>
-  <button onclick="convertUnit()">Convert</button>
-  <div class="result" id="convertResult"></div>
- </div>
- <div class="notice">Important: All construction quantities and project costs are preliminary planning estimates, not engineering designs or approved Bills of Quantities. Actual requirements depend on drawings, specifications, site conditions and local rates. Have a qualified civil engineer verify them before purchasing or construction.</div>
-</section>
-
-<section id="business" style="padding-top:35px">
- <h2 class="section-title">Business <span>Workspace</span></h2>
- <div class="tabs">
-  <button class="active" onclick="showBusiness('supplier',this)">Supplier</button>
-  <button onclick="showBusiness('transporter',this)">Transporter</button>
-  <button onclick="showBusiness('contractor',this)">Contractor</button>
- </div>
+ <h2>Business <span>Overview</span></h2>
  <div class="grid">
-  <div class="card">
-   <h3 id="businessTitle">Supplier Listing</h3>
-   <label>Business name</label><input id="bizName" placeholder="Your business name">
-   <label>City</label><input id="bizCity" placeholder="Your city">
-   <label>Phone / Contact</label><input id="bizPhone" placeholder="Contact number">
-   <label>Products / Services</label><textarea id="bizService" placeholder="What do you offer?"></textarea>
-   <button onclick="addBusiness()">Add Business Listing</button>
-   <p class="small">Demo listing saved in this browser only.</p>
-  </div>
-  <div class="card">
-   <h3>📊 Business Dashboard</h3>
-   <div class="stat" id="listingCount">0</div>
-   <p>Total saved business listings</p>
-   <div class="stat" id="requirementCount">0</div>
-   <p>Customer requirements saved</p>
-   <button class="secondary" onclick="exportCSV('business')">Download Listings CSV</button>
-  </div>
+  <div class="card"><div class="stat" id="projectCount">0</div><p>Saved Projects</p></div>
+  <div class="card"><div class="stat" id="stockCount">0</div><p>Inventory Items</p></div>
+  <div class="card"><div class="stat" id="businessCount">0</div><p>Business Listings</p></div>
+  <div class="card"><div class="stat" id="reqCount">0</div><p>Customer Requirements</p></div>
  </div>
- <h3>Saved Business Listings</h3>
- <div class="grid" id="businessList"></div>
+ <h2>All <span>Modules</span></h2>
+ <div class="grid">
+  <div class="card toolcard" onclick="page('construction')"><h3>🏗️ Construction Tools</h3><p>Material, quantity and cost estimators.</p></div>
+  <div class="card toolcard" onclick="page('projects')"><h3>📐 Project Management</h3><p>Projects, BOQ, labour and progress tracking.</p></div>
+  <div class="card toolcard" onclick="page('finance')"><h3>💰 Finance & Accounts</h3><p>GST, profit, invoices, quotations and payments.</p></div>
+  <div class="card toolcard" onclick="page('inventory')"><h3>📦 Inventory</h3><p>Stock, purchases and sales records.</p></div>
+  <div class="card toolcard" onclick="page('market')"><h3>🛒 Marketplace</h3><p>Suppliers, dealers, contractors and rentals.</p></div>
+  <div class="card toolcard" onclick="page('reports')"><h3>📊 Reports</h3><p>PDF printing and CSV exports.</p></div>
+ </div>
 </section>
 
-<section id="requirements" style="padding-top:30px">
- <h2 class="section-title">Post a <span>Requirement</span></h2>
+<section id="construction" class="section">
+ <h2>Construction <span>Tools</span></h2>
+ <div class="tabs" id="constructionTabs"></div>
  <div class="card">
-  <label>Your name</label><input id="reqName" placeholder="Name">
-  <label>Material / Service needed</label><input id="reqItem" placeholder="Cement, steel, contractor etc.">
-  <label>Quantity / Details</label><textarea id="reqDetails"></textarea>
-  <label>City</label><input id="reqCity" placeholder="City">
-  <button onclick="submitRequirement()">Save Requirement</button>
-  <div class="result" id="reqResult"></div>
+  <h3 id="toolTitle">Construction Calculator</h3>
+  <div id="toolForm"></div>
+  <button onclick="calculateTool()">Calculate</button>
+  <div class="result" id="toolResult">Enter values and calculate.</div>
  </div>
+ <div class="notice">These calculators provide preliminary planning estimates only. Actual quantities depend on drawings, specifications, material sizes, mix designs, site conditions and local standards. Structural work, BOQs and construction decisions must be checked by a qualified civil engineer.</div>
 </section>
 
-<section id="reports" style="padding-top:30px">
- <h2 class="section-title">Reports & <span>Downloads</span></h2>
+<section id="projects" class="section">
+ <h2>Project <span>Management</span></h2>
  <div class="grid">
   <div class="card">
-   <h3>📄 PDF Report</h3>
-   <p>Print or save this page as a PDF report using your browser.</p>
-   <button onclick="window.print()">Print / Save as PDF</button>
+   <h3>Project Estimator</h3>
+   <label>Project name</label><input id="pname" placeholder="Project name">
+   <label>Project type</label><select id="ptype"><option>Residential</option><option>Commercial</option><option>Industrial</option><option>Infrastructure</option><option>Renovation</option></select>
+   <label>Built-up area (sq ft)</label><input id="parea" type="number">
+   <label>Floors</label><input id="pfloors" type="number" value="1">
+   <label>Indicative rate per sq ft (₹)</label><input id="prate" type="number" value="1800">
+   <button onclick="saveProject()">Estimate & Save Project</button>
+   <div class="result" id="presult"></div>
   </div>
   <div class="card">
-   <h3>📊 Business CSV</h3>
-   <p>Download your saved business listings.</p>
-   <button onclick="exportCSV('business')">Download CSV</button>
+   <h3>Labour Cost Calculator</h3>
+   <label>Number of workers</label><input id="workers" type="number">
+   <label>Daily wage per worker (₹)</label><input id="wage" type="number">
+   <label>Working days</label><input id="days" type="number">
+   <button onclick="labourCalc()">Calculate Labour</button>
+   <div class="result" id="labourResult"></div>
   </div>
   <div class="card">
-   <h3>📋 Requirements CSV</h3>
-   <p>Download saved customer requirements.</p>
-   <button onclick="exportCSV('requirements')">Download CSV</button>
+   <h3>Project Timeline Planner</h3>
+   <label>Project stage</label><input id="stage" placeholder="e.g. Foundation">
+   <label>Start date</label><input id="startDate" type="date">
+   <label>Duration (days)</label><input id="duration" type="number">
+   <button onclick="timelineCalc()">Calculate End Date</button>
+   <div class="result" id="timelineResult"></div>
   </div>
   <div class="card">
-   <h3>🛍️ Products CSV</h3>
-   <p>Download marketplace product information.</p>
-   <button onclick="exportCSV('products')">Download CSV</button>
+   <h3>Work Progress Tracker</h3>
+   <label>Task / Work stage</label><input id="task" placeholder="e.g. Brickwork">
+   <label>Completion (%)</label><input id="progress" type="number" min="0" max="100">
+   <button onclick="saveProgress()">Save Progress</button>
+   <div class="result" id="progressResult"></div>
+  </div>
+ </div>
+ <h3>Saved Projects</h3><div id="projectList" class="grid"></div>
+ <h3>Progress Records</h3><div id="progressList" class="grid"></div>
+ <h3>BOQ / Material Planner</h3>
+ <div class="card">
+  <label>Project</label><input id="boqProject" placeholder="Project name">
+  <label>Material</label><input id="boqMaterial" placeholder="Material name">
+  <label>Quantity</label><input id="boqQty" type="number">
+  <label>Unit</label><input id="boqUnit" placeholder="bags, kg, cft, sq ft">
+  <label>Rate (₹)</label><input id="boqRate" type="number">
+  <button onclick="saveBOQ()">Add BOQ Item</button>
+  <div class="result" id="boqResult"></div>
+ </div>
+ <div id="boqList" class="grid"></div>
+</section>
+
+<section id="finance" class="section">
+ <h2>Finance & <span>Accounts</span></h2>
+ <div class="grid">
+  <div class="card">
+   <h3>GST Calculator</h3>
+   <label>Amount before GST (₹)</label><input id="gstAmount" type="number">
+   <label>GST rate (%)</label><select id="gstPercent"><option>5</option><option>12</option><option selected>18</option><option>28</option></select>
+   <button onclick="gstCalc()">Calculate GST</button><div id="gstResult" class="result"></div>
+  </div>
+  <div class="card">
+   <h3>Profit & Margin Calculator</h3>
+   <label>Purchase / Cost (₹)</label><input id="cost" type="number">
+   <label>Selling price (₹)</label><input id="selling" type="number">
+   <button onclick="profitCalc()">Calculate Profit</button><div id="profitResult" class="result"></div>
+  </div>
+  <div class="card">
+   <h3>Discount Calculator</h3>
+   <label>Original price (₹)</label><input id="original" type="number">
+   <label>Discount (%)</label><input id="discount" type="number">
+   <button onclick="discountCalc()">Calculate Discount</button><div id="discountResult" class="result"></div>
+  </div>
+  <div class="card">
+   <h3>Budget Planner</h3>
+   <label>Total budget (₹)</label><input id="budget" type="number">
+   <label>Amount spent (₹)</label><input id="spent" type="number">
+   <button onclick="budgetCalc()">Calculate Budget</button><div id="budgetResult" class="result"></div>
+  </div>
+  <div class="card">
+   <h3>Invoice / Quotation Generator</h3>
+   <label>Document type</label><select id="docType"><option>Invoice</option><option>Quotation</option><option>Purchase Order</option></select>
+   <label>Business name</label><input id="docBusiness" placeholder="Your business">
+   <label>Customer name</label><input id="docCustomer" placeholder="Customer">
+   <label>Item description</label><input id="docItem" placeholder="Material or service">
+   <label>Quantity</label><input id="docQty" type="number">
+   <label>Rate (₹)</label><input id="docRate" type="number">
+   <label>GST (%)</label><input id="docGST" type="number" value="18">
+   <button onclick="generateDocument()">Generate Document</button>
+   <div id="docResult" class="result"></div>
+  </div>
+  <div class="card">
+   <h3>Payment Tracker</h3>
+   <label>Customer / Supplier</label><input id="payName">
+   <label>Amount (₹)</label><input id="payAmount" type="number">
+   <label>Status</label><select id="payStatus"><option>Pending</option><option>Paid</option><option>Partially Paid</option></select>
+   <button onclick="savePayment()">Save Payment</button>
+   <div id="paymentList"></div>
   </div>
  </div>
 </section>
-</main>
 
+<section id="inventory" class="section">
+ <h2>Inventory <span>Management</span></h2>
+ <div class="grid">
+  <div class="card">
+   <h3>Add Stock / Material</h3>
+   <label>Product</label><input id="stockName" placeholder="Cement, Steel etc.">
+   <label>Quantity</label><input id="stockQty" type="number">
+   <label>Unit</label><input id="stockUnit" placeholder="bags, kg, pieces">
+   <label>Purchase rate (₹)</label><input id="stockRate" type="number">
+   <button onclick="addStock()">Add Stock</button>
+  </div>
+  <div class="card">
+   <h3>Record Purchase / Sale</h3>
+   <label>Product name</label><input id="movementName">
+   <label>Quantity</label><input id="movementQty" type="number">
+   <label>Transaction type</label><select id="movementType"><option>Purchase</option><option>Sale</option></select>
+   <button onclick="recordMovement()">Save Transaction</button>
+   <div id="movementResult" class="result"></div>
+  </div>
+ </div>
+ <h3>Current Stock</h3><div id="stockList" class="grid"></div>
+ <h3>Transaction History</h3><div id="movementList" class="grid"></div>
+</section>
+
+<section id="market" class="section">
+ <h2>Construction <span>Marketplace</span></h2>
+ <input id="marketSearch" placeholder="Search materials, suppliers or services..." oninput="renderMarket()">
+ <div class="tabs" id="marketTabs"></div>
+ <div id="marketProducts" class="grid"></div>
+ <h2>Business <span>Directory</span></h2>
+ <div class="card">
+  <label>Business type</label><select id="bizType"><option>Supplier</option><option>Dealer</option><option>Manufacturer</option><option>Contractor</option><option>Transporter</option><option>Architect</option><option>Engineer</option><option>Machinery Rental</option></select>
+  <label>Business name</label><input id="bizName">
+  <label>City</label><input id="bizCity">
+  <label>Contact information</label><input id="bizContact">
+  <label>Products / Services</label><textarea id="bizServices"></textarea>
+  <button onclick="addBusiness()">Add Business Listing</button>
+ </div>
+ <div id="businessList" class="grid"></div>
+ <h2>Customer <span>Requirements</span></h2>
+ <div class="card">
+  <label>Customer name</label><input id="reqName">
+  <label>Requirement</label><input id="reqItem" placeholder="Cement, steel, transport etc.">
+  <label>Quantity / Details</label><textarea id="reqDetails"></textarea>
+  <label>City</label><input id="reqCity">
+  <button onclick="addRequirement()">Save Requirement</button>
+ </div>
+ <div id="requirementList" class="grid"></div>
+</section>
+
+<section id="reports" class="section">
+ <h2>Reports & <span>Downloads</span></h2>
+ <div class="grid">
+  <div class="card"><h3>PDF Reports</h3><p>Print the current page or save as PDF from your browser.</p><button onclick="window.print()">Print / Save PDF</button></div>
+  <div class="card"><h3>Project CSV</h3><button onclick="csv('projects')">Download Projects</button></div>
+  <div class="card"><h3>BOQ CSV</h3><button onclick="csv('boq')">Download BOQ</button></div>
+  <div class="card"><h3>Inventory CSV</h3><button onclick="csv('stock')">Download Stock</button></div>
+  <div class="card"><h3>Business CSV</h3><button onclick="csv('businesses')">Download Listings</button></div>
+  <div class="card"><h3>Requirements CSV</h3><button onclick="csv('requirements')">Download Requirements</button></div>
+  <div class="card"><h3>Payments CSV</h3><button onclick="csv('payments')">Download Payments</button></div>
+  <div class="card"><h3>Transactions CSV</h3><button onclick="csv('movements')">Download Transactions</button></div>
+ </div>
+</section>
+
+</main>
 <footer>
  <div class="logo">BUILDMART BY ABHI</div>
- <p>Building India's Construction Business Ecosystem.</p>
- <p class="small">Version 2.0 | Frontend Demo</p>
+<p>Building India's Construction Business Ecosystem.</p>
+<p class="muted">BuildMart V3 | Frontend Application</p>
 </footer>
 
 <script>
-const products=[
-{name:"Cement",category:"Cement",price:"₹350 / bag",desc:"Construction cement marketplace"},
-{name:"TMT Steel",category:"Steel",price:"Market Price",desc:"Steel and reinforcement materials"},
-{name:"Red Bricks",category:"Bricks",price:"₹8 / piece",desc:"Building bricks"},
-{name:"Fly Ash Bricks",category:"Bricks",price:"Contact supplier",desc:"Alternative masonry bricks"},
-{name:"River Sand",category:"Sand",price:"Local Rates",desc:"Sand and aggregates"},
-{name:"M-Sand",category:"Sand",price:"Local Rates",desc:"Manufactured sand"},
-{name:"Tiles",category:"Tiles",price:"From ₹35 / sq ft",desc:"Floor and wall tiles"},
-{name:"Paint",category:"Paint",price:"Market Price",desc:"Interior and exterior paint"},
-{name:"Ready Mix Concrete",category:"Concrete",price:"Contact supplier",desc:"Concrete supply"},
-{name:"Pipes",category:"Plumbing",price:"Market Price",desc:"Construction plumbing products"},
-{name:"Electrical Items",category:"Electrical",price:"Market Price",desc:"Electrical materials"},
-{name:"Excavator Rental",category:"Machinery",price:"Contact owner",desc:"Equipment rental listing"}
-];
-let selectedCategory="All",businessType="Supplier";
-let businesses=JSON.parse(localStorage.getItem("bm_businesses")||"[]");
-let requirements=JSON.parse(localStorage.getItem("bm_requirements")||"[]");
+const $=id=>document.getElementById(id);
+const load=(key)=>JSON.parse(localStorage.getItem("bm_"+key)||"[]");
+const save=(key,data)=>localStorage.setItem("bm_"+key,JSON.stringify(data));
+let data={
+projects:load("projects"),boq:load("boq"),progress:load("progress"),
+stock:load("stock"),movements:load("movements"),businesses:load("businesses"),
+requirements:load("requirements"),payments:load("payments")
+};
+function page(id,btn){
+document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"));
+$(id).classList.add("active");
+document.querySelectorAll("#nav button").forEach(b=>b.classList.remove("active"));
+if(btn)btn.classList.add("active");
+refresh();
+}
+function number(id){return Number($(id).value)||0}
+function money(n){return "₹"+Number(n).toLocaleString("en-IN",{maximumFractionDigits:2})}
+function safe(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function addCard(id,html){$(id).innerHTML=html}
+function cards(id,arr,render){
+$(id).innerHTML=arr.map((x,i)=>`<div class="card">${render(x,i)}</div>`).join("")||"<p class='muted'>No records yet.</p>";
+}
+function removeItem(key,i){data[key].splice(i,1);save(key,data[key]);refresh()}
 
-function renderCategories(){
-let cats=["All",...new Set(products.map(p=>p.category))];
-document.getElementById("categories").innerHTML=cats.map(c=>
-`<button class="${selectedCategory===c?'active':''}" onclick="filterCategory('${c}')">${c}</button>`).join("");
+/* CONSTRUCTION TOOLS */
+const tools=[
+["Cement Calculator","Cement","Bags","Cement requirement depends on the verified mix design and BOQ."],
+["Steel Quantity Estimator","Steel","kg","Steel quantity depends on structural drawings and bar bending schedule."],
+["Bricks Calculator","Bricks","pieces","Requires wall dimensions, brick size, mortar joints and openings."],
+["Sand Calculator","Sand","cubic feet","Enter volume and depth to calculate geometric volume."],
+["Aggregate Calculator","Aggregate","cubic feet","Enter volume and depth to calculate geometric volume."],
+["Concrete Calculator","Concrete","cubic metres","Calculates geometric volume only, not mix proportions."],
+["Tiles Calculator","Tiles","sq ft","Calculates surface area; allow for layout-specific cutting waste."],
+["Paint Calculator","Paint","litres","Uses coverage per litre and number of coats."],
+["Flooring Calculator","Flooring","sq ft","Calculates floor surface area."],
+["Plaster Calculator","Plaster","sq ft","Calculates wall surface area; thickness and mix need verification."],
+["Wall Area Calculator","Wall Area","sq ft","Calculates wall surface area from dimensions."],
+["Excavation Volume Calculator","Excavation","cubic metres","Geometric excavation volume only; site safety and ground conditions need professional review."],
+["Roofing Calculator","Roofing","sq ft","Calculates plan area; roof slope and overlaps need separate allowance."],
+["Waterproofing Calculator","Waterproofing","sq ft","Calculates treatment area; product coverage varies."]
+];
+let toolIndex=0;
+function initTools(){
+$("constructionTabs").innerHTML=tools.map((t,i)=>`<button class="${i===0?'active':''}" onclick="selectTool(${i},this)">${t[1]}</button>`).join("");
+selectTool(0,$("constructionTabs").firstChild);
 }
-function filterCategory(c){selectedCategory=c;renderCategories();renderProducts()}
-function renderProducts(){
-let q=document.getElementById("search").value.toLowerCase();
-let list=products.filter(p=>(selectedCategory==="All"||p.category===selectedCategory)&&
-(p.name.toLowerCase().includes(q)||p.category.toLowerCase().includes(q)));
-document.getElementById("products").innerHTML=list.map(p=>`
-<div class="card"><span class="tag">${p.category}</span>
-<h3>${p.name}</h3><p>${p.desc}</p><div class="price">${p.price}</div>
-<button onclick="postProduct('${p.name}')">Request Quote</button></div>`).join("")||
-"<p>No products found.</p>";
-}
-function postProduct(name){
-document.getElementById("reqItem").value=name;
-document.getElementById("requirements").scrollIntoView({behavior:"smooth"});
-}
-function showTool(id,btn){
-document.querySelectorAll(".tool").forEach(x=>x.classList.add("hidden"));
-document.getElementById(id).classList.remove("hidden");
-document.querySelectorAll("#tools .tabs button").forEach(x=>x.classList.remove("active"));
+function selectTool(i,btn){
+toolIndex=i;
+document.querySelectorAll("#constructionTabs button").forEach(x=>x.classList.remove("active"));
 btn.classList.add("active");
+$("toolTitle").textContent=tools[i][0];
+let form=`<label>Length (feet)</label><input id="tLength" type="number" value="10">
+<label>Width (feet)</label><input id="tWidth" type="number" value="10">
+<label>Height / Depth (feet)</label><input id="tHeight" type="number" value="1">
+<label>Number of coats (paint only)</label><input id="tCoats" type="number" value="2">
+<label>Coverage per litre (paint only)</label><input id="tCoverage" type="number" value="100">
+<label>Thickness in inches (concrete / plaster)</label><input id="tThickness" type="number" value="4">`;
+$("toolForm").innerHTML=form;
+$("toolResult").textContent=tools[i][3];
 }
-function estimate(){
-let area=+document.getElementById("area").value;
-let floors=+document.getElementById("floors").value;
-let rate=+document.getElementById("rate").value;
-if(!area||!floors||!rate||area<=0||floors<=0||rate<=0)return alert("Enter valid positive values.");
-let total=area*floors*rate;
-document.getElementById("estimateResult").innerHTML=
-`Project: ${document.getElementById("ptype").value}<br>
-Total built-up area: ${(area*floors).toLocaleString()} sq ft<br>
-Indicative estimated budget: ₹${total.toLocaleString("en-IN")}<br>
-Approximate cost per floor: ₹${(area*rate).toLocaleString("en-IN")}`;
-}
-function materialCalc(){
-let a=+document.getElementById("matArea").value;
-let d=+document.getElementById("depth").value;
-let type=document.getElementById("materialType").value;
-if(!a||a<=0||d<0)return alert("Enter valid area and depth.");
-let output="";
-if(type==="concrete")output=`Geometric volume: ${(a*d/12/35.3147).toFixed(3)} cubic metres.`;
-if(type==="sand")output=`Geometric volume: ${(a*d/12).toFixed(2)} cubic feet.`;
-if(type==="tile")output=`Net area: ${a.toFixed(2)} sq ft. Add a suitable wastage allowance based on layout.`;
-if(type==="brick")output=`Area-based brick count cannot be reliably estimated without wall dimensions, thickness and brick size.`;
-if(type==="cement")output=`Cement quantity cannot be reliably estimated from floor area alone. A verified mix design / BOQ is needed.`;
-document.getElementById("materialResult").innerHTML=output;
-}
-function paintCalc(){
-let a=+document.getElementById("wallArea").value;
-let c=+document.getElementById("coats").value;
-let cov=+document.getElementById("coverage").value;
-if(!a||!c||!cov||a<=0||c<=0||cov<=0)return alert("Enter valid values.");
-document.getElementById("paintResult").innerHTML=
-`Indicative paint required: ${(a*c/cov).toFixed(2)} litres.<br>
-Actual coverage varies by surface, paint and application.`;
-}
-function businessCalc(){
-let a=+document.getElementById("amount").value;
-let b=+document.getElementById("amount2").value;
-let r=+document.getElementById("gstRate").value;
-let t=document.getElementById("calcType").value;
-if(a<0||!Number.isFinite(a))return alert("Enter a valid amount.");
-let out="";
-if(t==="gst"){
-if(r<0)return alert("Enter a valid GST rate.");
-out=`GST amount: ₹${(a*r/100).toFixed(2)}<br>Total including GST: ₹${(a*(1+r/100)).toFixed(2)}`;
-}
-if(t==="profit"){
-out=`Profit / Loss: ₹${(b-a).toFixed(2)}<br>Margin: ${b>0?((b-a)/b*100).toFixed(2):"N/A"}%`;
-}
-if(t==="budget"){
-out=`Budget remaining: ₹${(a-b).toFixed(2)}<br>${a>=b?"Within budget":"Over budget"}`;
-}
-document.getElementById("businessResult").innerHTML=out;
-}
-function convertUnit(){
-let v=+document.getElementById("convertValue").value;
-let t=document.getElementById("convertType").value;
-if(!Number.isFinite(v))return alert("Enter a valid number.");
-let factors={ftm:0.3048,mft:3.28084,sqftsqm:0.092903,sqmsqft:10.7639,kgton:0.001,tonkg:1000,cftcum:0.0283168,cumcft:35.3147};
-document.getElementById("convertResult").innerHTML=`Result: ${(v*factors[t]).toLocaleString("en-IN",{maximumFractionDigits:5})}`;
-}
-function showBusiness(type,btn){
-businessType=type;
-document.getElementById("businessTitle").textContent=type[0].toUpperCase()+type.slice(1)+" Listing";
-document.querySelectorAll("#business .tabs button").forEach(x=>x.classList.remove("active"));
-btn.classList.add("active");
-}
-function addBusiness(){
-let name=document.getElementById("bizName").value.trim();
-let city=document.getElementById("bizCity").value.trim();
-let phone=document.getElementById("bizPhone").value.trim();
-let service=document.getElementById("bizService").value.trim();
-if(!name||!city||!service)return alert("Please enter business name, city and service.");
-businesses.push({name,city,phone,service,type:businessType,date:new Date().toLocaleDateString()});
-localStorage.setItem("bm_businesses",JSON.stringify(businesses));
-["bizName","bizCity","bizPhone","bizService"].forEach(id=>document.getElementById(id).value="");
-renderDashboard();
-}
-function deleteBusiness(i){
-if(!confirm("Delete this listing?"))return;
-businesses.splice(i,1);
-localStorage.setItem("bm_businesses",JSON.stringify(businesses));
-renderDashboard();
-}
-function renderDashboard(){
-document.getElementById("listingCount").textContent=businesses.length;
-document.getElementById("requirementCount").textContent=requirements.length;
-document.getElementById("businessList").innerHTML=businesses.map((b,i)=>`
-<div class="card"><span class="tag">${b.type}</span><h3>${escapeHTML(b.name)}</h3>
-<p>${escapeHTML(b.city)}<br>${escapeHTML(b.service)}<br>${escapeHTML(b.phone||"")}</p>
-<button class="danger" onclick="deleteBusiness(${i})">Delete</button></div>`).join("")||"<p>No listings added yet.</p>";
-}
-function submitRequirement(){
-let name=document.getElementById("reqName").value.trim();
-let item=document.getElementById("reqItem").value.trim();
-let details=document.getElementById("reqDetails").value.trim();
-let city=document.getElementById("reqCity").value.trim();
-if(!name||!item||!city)return alert("Enter name, requirement and city.");
-requirements.push({name,item,details,city,date:new Date().toLocaleDateString()});
-localStorage.setItem("bm_requirements",JSON.stringify(requirements));
-document.getElementById("reqResult").textContent="Requirement saved in this browser.";
-["reqName","reqItem","reqDetails","reqCity"].forEach(id=>document.getElementById(id).value="");
-renderDashboard();
-}
-function escapeHTML(s){
-return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-}
-function exportCSV(type){
-let data=type==="business"?businesses:type==="requi
+function calculateTool(){
+let L=number("tLength"),W=number("tWidth"),H=number("tHeight");
+let area=L*W,volume=area*H/35.3147,thick=number("tThickness");
+let result="";
+if(L<=0||W<=0||H<0)return alert("Enter valid positive dimensions.");
+switch(toolIndex){
+case 0: result="Cement quantity cannot be reliably calculated from area alone. Obtain a verified mix design / BOQ.";break;
+case 1: result="Steel quantity must be taken from structural drawings and bar bending schedule. No safe generic estimate is provided.";break;
+case 2: result="Brick count requires wall length, height, thickness, brick dimensions and openings. Use a project-specific BOQ.";break;
+case 3: case 4: result=`Geo
