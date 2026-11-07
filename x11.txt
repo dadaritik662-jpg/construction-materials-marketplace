@@ -1,0 +1,8 @@
+$('sad').previousElementSibling.insertAdjacentHTML('beforebegin','<div class="row"><div><label>\u0921\u093F\u0932\u0940\u0935\u0930\u0940 \u0915\u093F\u0924\u0928\u0947 \u0918\u0902\u091F\u0947 \u092E\u0947\u0902</label><input id="seta" type="number" placeholder="\u091C\u0948\u0938\u0947 4"></div><div><label>\u0909\u0927\u093E\u0930 \u0926\u0947\u0924\u0947 \u0939\u0948\u0902?</label><select id="scr"><option value="0">\u0928\u0939\u0940\u0902</option><option value="1">\u0939\u093E\u0901</option></select></div></div>');
+const Rg3=reg;reg=async function(){await Rg3();if(!(U&&U.role=='supplier'))return;await rq('PATCH','/rest/v1/listings?owner=eq.'+U.id,{credit_ok:$('scr').value=='1',eta_hours:+$('seta').value||null},{Prefer:'return=minimal'});await load()};
+const Fl2=fill;fill=function(){Fl2();rq('GET','/rest/v1/listings?owner=eq.'+(U?U.id:'x')+'&select=credit_ok,eta_hours').then(r=>{const d=Array.isArray(r.j)&&r.j[0];if(d){$('scr').value=d.credit_ok?'1':'0';$('seta').value=d.eta_hours||''}})};
+const L7=load;load=async function(){await L7();const r=await rq('GET','/rest/v1/listings?select=id,credit_ok,eta_hours&status=eq.approved');if(Array.isArray(r.j)){const m={};r.j.forEach(z=>{m[z.id]=z});real.forEach(x=>{const z=m[x.id]||{};x.cr0=z.credit_ok;x.eta=z.eta_hours})}list()};
+const Cd5=card;card=function(x,i,c){let h=Cd5(x,i,c);const t=(x.cr0?'<span class="tag" style="background:#e6f0ff;color:#0a3d91">\uD83D\uDCB3 \u0909\u0927\u093E\u0930 \u0909\u092A\u0932\u092C\u094D\u0927</span> ':'')+(x.eta?'<span class="tag" style="background:#fff1e3">\uD83D\uDE9A ~'+x.eta+' \u0918\u0902\u091F\u0947 \u092E\u0947\u0902</span> ':'');return t?h.replace('</h3>','</h3>'+t):h};
+load();
+
+~
