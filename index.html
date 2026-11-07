@@ -786,4 +786,199 @@ window.BM = {
       "Name: "+$("bm-customer-name").value+
       "\nCity: "+$("bm-customer-city").value+
       "\nCategory: "+$("bm-customer-type>
-       </body></html>
+      <!-- BUILDMART BY ABHI - CONSTRUCTION HUB -->
+<style>
+#buildmart-pro{font-family:Arial,sans-serif;color:#172033;max-width:1200px;margin:25px auto;padding:15px}
+#buildmart-pro *{box-sizing:border-box}
+#buildmart-pro .hero{background:linear-gradient(120deg,#102b52,#1767b5);color:white;padding:35px 22px;border-radius:18px}
+#buildmart-pro .hero h1{font-size:30px;margin:0 0 10px}
+#buildmart-pro .nav{display:flex;gap:8px;overflow:auto;padding:15px 0;position:sticky;top:0;background:white;z-index:5}
+#buildmart-pro button{background:#1556a5;color:white;border:0;padding:11px 16px;border-radius:8px;cursor:pointer}
+#buildmart-pro .nav button{white-space:nowrap}
+#buildmart-pro .nav button.active{background:#102b52}
+#buildmart-pro .page{display:none}
+#buildmart-pro .page.active{display:block}
+#buildmart-pro .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:15px}
+#buildmart-pro .card{border:1px solid #e1e6ed;border-radius:13px;padding:18px;margin-bottom:14px;background:white}
+#buildmart-pro input,#buildmart-pro select,#buildmart-pro textarea{width:100%;padding:12px;border:1px solid #ccd3df;border-radius:8px;margin:5px 0 12px}
+#buildmart-pro label{font-weight:bold}
+#buildmart-pro .result{background:#edf5ff;padding:15px;border-radius:10px;margin-top:12px}
+#buildmart-pro .muted{color:#697586;font-size:13px}
+#buildmart-pro .icon{font-size:35px}
+</style>
+
+<div id="buildmart-pro">
+ <div class="hero">
+  <h1>BUILDMART BY ABHI</h1>
+  <h2>Your Complete Construction Partner</h2>
+  <p>घर से लेकर रोड, बिल्डिंग और बड़े Construction Projects तक—सब कुछ एक जगह।</p>
+ </div>
+
+ <div class="nav">
+  <button class="active" data-page="dashboard">Home</button>
+  <button data-page="house">House Planner</button>
+  <button data-page="estimate">Cost Calculator</button>
+  <button data-page="enquiry">Find Professionals</button>
+  <button data-page="projects">My Projects</button>
+  <button data-page="materials">Materials</button>
+  <button data-page="checklist">Checklist</button>
+ </div>
+
+ <section class="page active" id="bm-dashboard">
+  <h2>Everything for Construction</h2>
+  <div class="grid">
+   <div class="card"><div class="icon">🏠</div><h3>Home Construction</h3><p>घर का डिजाइन, कमरों की जरूरत और बजट प्लान करें।</p><button onclick="bmOpen('house')">Start Planning</button></div>
+   <div class="card"><div class="icon">🛣️</div><h3>Road & Civil Work</h3><p>रोड, नाली, पुलिया और अन्य निर्माण कार्य।</p><button onclick="bmOpen('enquiry')">Get Help</button></div>
+   <div class="card"><div class="icon">💰</div><h3>Cost Estimation</h3><p>अपने प्रोजेक्ट का शुरुआती खर्च निकालें।</p><button onclick="bmOpen('estimate')">Calculate</button></div>
+   <div class="card"><div class="icon">👷</div><h3>Professionals</h3><p>Architect, Engineer, Contractor और Labour की जरूरत दर्ज करें।</p><button onclick="bmOpen('enquiry')">Find Professionals</button></div>
+   <div class="card"><div class="icon">🧱</div><h3>Materials</h3><p>Cement, Steel, Sand, Bricks और बाकी सामग्री की जानकारी।</p><button onclick="bmOpen('materials')">Explore</button></div>
+   <div class="card"><div class="icon">📋</div><h3>Project Management</h3><p>अपने प्रोजेक्ट और काम की प्रगति संभालें।</p><button onclick="bmOpen('projects')">Manage</button></div>
+  </div>
+ </section>
+
+ <section class="page" id="bm-house">
+  <div class="card">
+   <h2>🏡 House Design Planner</h2>
+   <p>अपने सपनों के घर की जरूरतें दर्ज करें।</p>
+   <label>Plot Width (Feet)</label><input id="bm-width" type="number" placeholder="30">
+   <label>Plot Length (Feet)</label><input id="bm-length" type="number" placeholder="40">
+   <label>Number of Floors</label><select id="bm-floors"><option>1</option><option>2</option><option>3</option></select>
+   <label>Bedrooms</label><select id="bm-bed"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+   <label>Bathrooms</label><select id="bm-bath"><option>1</option><option>2</option><option>3</option><option>4</option></select>
+   <label>Kitchen</label><select id="bm-kitchen"><option>Open Kitchen</option><option>Closed Kitchen</option><option>Modular Kitchen</option></select>
+   <label>Design Style</label><select id="bm-style"><option>Modern</option><option>Traditional Indian</option><option>Luxury</option><option>Minimal</option></select>
+   <label>Other Requirements</label><textarea id="bm-extra" placeholder="Balcony, parking, garden, पूजा room आदि"></textarea>
+   <button onclick="bmSaveHouse()">Save House Plan Brief</button>
+   <div id="bm-house-result" class="result" hidden></div>
+  </div>
+  <div class="grid">
+   <div class="card"><div class="icon">🏠</div><h3>Modern Home</h3><p>Modern home design inspiration.</p></div>
+   <div class="card"><div class="icon">🏘️</div><h3>Duplex House</h3><p>Two-floor house planning.</p></div>
+   <div class="card"><div class="icon">🏢</div><h3>Commercial Building</h3><p>Shop, office और commercial planning.</p></div>
+   <div class="card"><div class="icon">🌳</div><h3>Farmhouse</h3><p>Farmhouse और open-space planning.</p></div>
+  </div>
+  <p class="muted">यह design brief है, approved architectural या structural drawing नहीं। नक्शा qualified architect/engineer से बनवाएँ।</p>
+ </section>
+
+ <section class="page" id="bm-estimate">
+  <div class="card">
+   <h2>₹ Construction Cost Calculator</h2>
+   <label>Construction Type</label>
+   <select id="bm-type"><option>House Construction</option><option>Road Construction</option><option>Flooring</option><option>Painting</option><option>Boundary Wall</option><option>Drainage</option></select>
+   <label>Area / Quantity</label><input id="bm-qty" type="number" placeholder="1000">
+   <label>Rate per unit (₹)</label><input id="bm-rate" type="number" placeholder="1800">
+   <label>Extra Contingency (%)</label><input id="bm-extra-rate" type="number" value="10">
+   <button onclick="bmCalculate()">Calculate Budget</button>
+   <div id="bm-estimate-result" class="result" hidden></div>
+  </div>
+ </section>
+
+ <section class="page" id="bm-enquiry">
+  <div class="card">
+   <h2>👷 Find Construction Services</h2>
+   <p>अपनी जरूरत दर्ज करें।</p>
+   <label>Your Name</label><input id="bm-name" placeholder="Full Name">
+   <label>Mobile Number</label><input id="bm-mobile" maxlength="10" placeholder="10 digit mobile">
+   <label>City / District</label><input id="bm-city" placeholder="Your location">
+   <label>Service Required</label>
+   <select id="bm-service">
+    <option>House Construction</option><option>Road Construction</option>
+    <option>Architect</option><option>Civil Engineer</option>
+    <option>Building Contractor</option><option>Interior Designer</option>
+    <option>Electrician</option><option>Plumber</option>
+    <option>Labour Contractor</option><option>Material Supplier</option>
+    <option>JCB / Machinery Rental</option><option>Renovation</option>
+    <option>Other Civil Work</option>
+   </select>
+   <label>Approximate Budget (₹)</label><input id="bm-budget" type="number">
+   <label>Work Details</label><textarea id="bm-details" placeholder="काम की पूरी जानकारी लिखें"></textarea>
+   <button onclick="bmSaveEnquiry()">Submit Enquiry</button>
+   <div id="bm-enquiry-result" class="result" hidden></div>
+  </div>
+ </section>
+
+ <section class="page" id="bm-projects">
+  <div class="card">
+   <h2>📋 Project Manager</h2>
+   <label>Project Name</label><input id="bm-project-name" placeholder="My New House">
+   <label>Project Budget (₹)</label><input id="bm-project-budget" type="number">
+   <label>Project Stage</label>
+   <select id="bm-project-stage"><option>Planning</option><option>Design</option><option>Foundation</option><option>Structure</option><option>Brickwork</option><option>Electrical & Plumbing</option><option>Finishing</option><option>Completed</option></select>
+   <button onclick="bmAddProject()">Add Project</button>
+   <div id="bm-project-list" class="result"></div>
+  </div>
+ </section>
+
+ <section class="page" id="bm-materials">
+  <h2>🧱 Construction Material Directory</h2>
+  <div class="grid">
+   <div class="card"><h3>Cement</h3><p>OPC, PPC, PSC Cement</p></div>
+   <div class="card"><h3>Steel</h3><p>TMT Bars, Structural Steel</p></div>
+   <div class="card"><h3>Sand & Aggregate</h3><p>M-Sand, Natural Sand, Stone Aggregate</p></div>
+   <div class="card"><h3>Bricks & Blocks</h3><p>Red Bricks, Fly Ash, AAC Blocks</p></div>
+   <div class="card"><h3>Electrical</h3><p>Wires, Switches, Lights, Panels</p></div>
+   <div class="card"><h3>Plumbing</h3><p>Pipes, Tanks, Sanitary Fittings</p></div>
+   <div class="card"><h3>Finishing</h3><p>Tiles, Paint, Putty, Granite, Marble</p></div>
+   <div class="card"><h3>Machinery</h3><p>JCB, Tractor, Mixer, Roller, Scaffolding</p></div>
+  </div>
+  <p class="muted">ये categories हैं, live stock या verified supplier prices नहीं।</p>
+ </section>
+
+ <section class="page" id="bm-checklist">
+  <div class="card">
+   <h2>✅ Construction Checklist</h2>
+   <div id="bm-check-items"></div>
+   <div id="bm-progress" class="result"></div>
+  </div>
+ </section>
+ <p class="muted">BUILDMART BY ABHI | Construction planning platform</p>
+</div>
+
+<script>
+(function(){
+ const key='buildmart_pro_data_v1';
+ const load=()=>{try{return JSON.parse(localStorage.getItem(key))||{houses:[],enquiries:[],projects:[],checks:{}}}catch(e){return {houses:[],enquiries:[],projects:[],checks:{}}}};
+ const save=d=>localStorage.setItem(key,JSON.stringify(d));
+ window.bmOpen=function(p){
+  document.querySelectorAll('#buildmart-pro .page').forEach(x=>x.classList.toggle('active',x.id==='bm-'+p));
+  document.querySelectorAll('#buildmart-pro .nav button').forEach(x=>x.classList.toggle('active',x.dataset.page===p));
+ };
+ document.querySelectorAll('#buildmart-pro [data-page]').forEach(b=>b.onclick=()=>bmOpen(b.dataset.page));
+ window.bmSaveHouse=function(){
+  let w=+document.getElementById('bm-width').value,l=+document.getElementById('bm-length').value;
+  if(w<=0||l<=0)return alert('Plot width और length भरें');
+  let x={width:w,length:l,area:w*l,floors:document.getElementById('bm-floors').value,beds:document.getElementById('bm-bed').value,baths:document.getElementById('bm-bath').value,kitchen:document.getElementById('bm-kitchen').value,style:document.getElementById('bm-style').value,extra:document.getElementById('bm-extra').value};
+  let d=load();d.houses.unshift(x);save(d);
+  let o=document.getElementById('bm-house-result');o.hidden=false;o.innerHTML='<b>House brief saved!</b><br>Plot area: '+x.area+' sq ft<br>Floors: '+x.floors+' | Bedrooms: '+x.beds+' | Bathrooms: '+x.baths+'<br>Style: '+x.style+'<br>Requirements: '+x.extra;
+ };
+ window.bmCalculate=function(){
+  let q=+document.getElementById('bm-qty').value,r=+document.getElementById('bm-rate').value,c=+document.getElementById('bm-extra-rate').value;
+  if(q<=0||r<=0)return alert('Quantity और rate भरें');
+  c=Math.max(0,Math.min(50,c||0));let base=q*r,total=base*(1+c/100);
+  let o=document.getElementById('bm-estimate-result');o.hidden=false;
+  o.innerHTML='<b>Base Cost: ₹'+base.toLocaleString('en-IN')+'</b><br>Contingency: ₹'+(total-base).toLocaleString('en-IN')+'<h2>Total Estimate: ₹'+Math.round(total).toLocaleString('en-IN')+'</h2><small>यह शुरुआती अनुमान है, final quotation नहीं।</small>';
+ };
+ window.bmSaveEnquiry=function(){
+  let name=document.getElementById('bm-name').value.trim(),mobile=document.getElementById('bm-mobile').value.trim(),details=document.getElementById('bm-details').value.trim();
+  if(!name||!/^[6-9][0-9]{9}$/.test(mobile)||!details)return alert('नाम, सही मोबाइल और काम की जानकारी भरें');
+  let d=load();d.enquiries.unshift({name,mobile,city:document.getElementById('bm-city').value,service:document.getElementById('bm-service').value,budget:document.getElementById('bm-budget').value,details,date:new Date().toLocaleString()});save(d);
+  let o=document.getElementById('bm-enquiry-result');o.hidden=false;o.textContent='Enquiry इस browser में save हो गई। अभी admin या vendors को नहीं भेजी गई है।';
+ };
+ function renderProjects(){
+  let d=load();document.getElementById('bm-project-list').innerHTML=d.projects.map((p,i)=>'<p><b>'+p.name.replace(/[<>&"]/g,'')+'</b> — '+p.stage+' — ₹'+Number(p.budget||0).toLocaleString('en-IN')+' <button onclick="bmDeleteProject('+i+')">Delete</button></p>').join('')||'No projects added.';
+ }
+ window.bmAddProject=function(){
+  let name=document.getElementById('bm-project-name').value.trim();if(!name)return alert('Project name भरें');
+  let d=load();d.projects.unshift({name,budget:document.getElementById('bm-project-budget').value,stage:document.getElementById('bm-project-stage').value});save(d);renderProjects();document.getElementById('bm-project-name').value='';
+ };
+ window.bmDeleteProject=function(i){let d=load();d.projects.splice(i,1);save(d);renderProjects()};
+ const tasks=['Land documents checked','Site survey completed','Soil test reviewed if required','Architectural plan finalized','Structural design checked by engineer','Local permissions verified','BOQ and material specifications prepared','Written contractor quotations received','Work scope and payment milestones agreed','Safety arrangements planned','Quality inspections planned','Final testing and handover planned'];
+ function renderChecks(){
+  let d=load(),box=document.getElementById('bm-check-items');
+  box.innerHTML=tasks.map((t,i)=>'<label style="display:block;margin:12px 0"><input type="checkbox" data-i="'+i+'" '+(d.checks[i]?'checked':'')+' style="width:auto"> '+t+'</label>').join('');
+  box.querySelectorAll('input').forEach(c=>c.onchange=()=>{let x=load();x.checks[c.dataset.i]=c.checked;save(x);renderChecks()});
+  document.getElementById('bm-progress').textContent=Object.values(d.checks).filter(Boolean).length+' / '+tasks.length+' completed';
+ }
+ renderProjects();renderChecks();
+})();
+</script></body></html>
