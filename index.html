@@ -118,4 +118,672 @@ yulc5f1SLW3+OyBuFYdTR3Y4PeocTC1pp3XSYxnIxOGfqrrfiqiu3O0ju2TWuWEgH5Qd4JVWHZVg
 lHiFMkWhnk++x1E0T8fPdRTJ0XIlx2f6JGjXJysOT9MpsRqJUav0Yrm2eztZp+1mkZZONeQAyAqc
 UBuGK/qHRD7odZQ91zsnaOGJw7e0UAWNiBYTVzeIZMIRz3tssFVufq1uJhDt1dRa3CspFaHNMN9Q
 820UucmoNYQ9ONBYIpv7K22PFZTJ3IgnGyYtjdI
-`;const b=c1+await g('n2.txt')+await g('n3.txt')+await g('n4.txt')+await g('n5.txt')+await g('n6.txt');w='data';const u=Uint8Array.from(atob(b),c=>c.charCodeAt(0)),t=await new Response(new Blob([u]).stream().pipeThrough(new DecompressionStream('gzip'))).text();document.open();document.write(t);document.close();fetch('x1.txt?v=15').then(r=>r.ok?r.text():'').then(s=>{s=s.trim();if(s.slice(-1)=='~')(0,eval)(s.slice(0,-1))}).catch(e=>console.log('x1',e))}catch(e){document.body.insertAdjacentHTML('beforeend','<p style="color:#fff;font-weight:400;padding:12px">File problem: '+w+' - dobara paste karein.</p>')}})();</script></body></html>
+`;const b=c1+await g('n2.txt')+await g('n3.txt')+await g('n4.txt')+await g('n5.txt')+await g('n6.txt');w='data';const u=Uint8Array.from(atob(b),c=>c.charCodeAt(0)),t=await new Response(new Blob([u]).stream().pipeThrough(new DecompressionStream('gzip'))).text();document.open();document.write(t);document.close();fetch('x1.txt?v=15').then(r=>r.ok?r.text():'').then(s=>{s=s.trim();if(s.slice(-1)=='~')(0,eval)(s.slice(0,-1))}).catch(e=>console.log('x1',e))}catch(e){document.body.insertAdjacentHTML('beforeend','<p style="color:#fff;font-weight:400;padding:12px">File problem: '+w+' - dobara paste karein.</p>')}})();</script> <!-- ========== BUILDMART EXPANSION ADD-ON START ========== -->
+
+<style>
+#bm-expansion {
+  background:#0b1422;
+  color:#fff;
+  padding:22px 4%;
+  font-family:Arial,sans-serif;
+}
+#bm-expansion * {box-sizing:border-box}
+#bm-expansion h2 {color:#ffc65c}
+#bm-expansion h3 {margin-top:5px}
+#bm-expansion .bm-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:14px;
+}
+#bm-expansion .bm-card {
+  background:#15243a;
+  border:1px solid #34445c;
+  padding:17px;
+  border-radius:12px;
+}
+#bm-expansion input,
+#bm-expansion select,
+#bm-expansion textarea {
+  width:100%;
+  padding:12px;
+  margin:7px 0 13px;
+  border:1px solid #40516a;
+  border-radius:7px;
+  background:#091321;
+  color:white;
+}
+#bm-expansion label {
+  display:block;
+  color:#c8d3e1;
+  font-size:13px;
+}
+#bm-expansion button {
+  background:#ffc65c;
+  color:#172033;
+  padding:11px 15px;
+  border:0;
+  border-radius:7px;
+  font-weight:bold;
+  cursor:pointer;
+  margin:4px 3px 4px 0;
+}
+#bm-expansion .bm-dark {
+  background:#30435d;
+  color:white;
+}
+#bm-expansion .bm-tabs {
+  display:flex;
+  gap:7px;
+  flex-wrap:wrap;
+  margin:18px 0;
+}
+#bm-expansion .bm-panel {margin:18px 0}
+#bm-expansion .bm-hide {display:none}
+#bm-expansion .bm-result {
+  background:#091321;
+  padding:13px;
+  border-radius:8px;
+  margin-top:10px;
+  overflow-wrap:anywhere;
+}
+#bm-expansion .bm-small {
+  color:#aebdd0;
+  font-size:12px;
+  line-height:1.6;
+}
+#bm-expansion .bm-tag {
+  color:#6ce4ae;
+  font-size:12px;
+}
+#bm-expansion .bm-whatsapp {
+  position:fixed;
+  bottom:20px;
+  right:15px;
+  background:#20c76a;
+  color:white;
+  padding:14px 19px;
+  border-radius:30px;
+  text-decoration:none;
+  z-index:99999;
+  font-weight:bold;
+}
+</style>
+
+<div id="bm-expansion">
+
+  <div class="bm-card" style="text-align:center">
+    <div class="bm-tag">BUILDMART BY ABHI</div>
+    <h1>PLAN. SOURCE. BUILD. MANAGE.</h1>
+    <p class="bm-small">
+      Your complete construction and home-building platform.
+    </p>
+    <button onclick="BM.go('design')">Explore Home Designs</button>
+    <button onclick="BM.go('planner')">Plan Construction</button>
+    <button onclick="BM.go('directory')">Find Professionals</button>
+  </div>
+
+  <div class="bm-tabs">
+    <button onclick="BM.go('design')">🏠 Home Designs</button>
+    <button onclick="BM.go('planner')">📐 House Planner</button>
+    <button onclick="BM.go('interior')">🛋️ Interior Design</button>
+    <button onclick="BM.go('directory')">👷 Professionals</button>
+    <button onclick="BM.go('products')">🧱 Materials</button>
+    <button onclick="BM.go('rentals')">🚜 Rentals</button>
+    <button onclick="BM.go('enquiry')">📩 Customer Enquiry</button>
+    <button onclick="BM.go('quotes')">⚖️ Compare Quotes</button>
+    <button onclick="BM.go('vendor')">🏪 Register Business</button>
+  </div>
+
+  <!-- HOME DESIGNS -->
+  <section class="bm-panel" id="bm-design">
+    <h2>🏠 Home Design Gallery</h2>
+    <div class="bm-grid" id="bm-design-list"></div>
+    <p class="bm-small">
+      Design ideas are for inspiration. Final drawings must be prepared
+      and checked by qualified architects and structural engineers.
+    </p>
+  </section>
+
+  <!-- HOUSE PLANNER -->
+  <section class="bm-panel bm-hide" id="bm-planner">
+    <h2>📐 House Construction Planner</h2>
+
+    <div class="bm-grid">
+      <div class="bm-card">
+        <h3>Construction Budget Calculator</h3>
+        <label>Built-up area (sq ft)</label>
+        <input id="bm-area" type="number" placeholder="1200">
+
+        <label>Estimated rate per sq ft (₹)</label>
+        <input id="bm-rate" type="number" placeholder="1800">
+
+        <label>Number of floors</label>
+        <select id="bm-floors">
+          <option value="1">1 Floor</option>
+          <option value="2">2 Floors</option>
+          <option value="3">3 Floors</option>
+        </select>
+
+        <label>Extra allowance (%)</label>
+        <input id="bm-extra" type="number" value="10">
+
+        <button onclick="BM.budget()">Calculate Budget</button>
+        <div class="bm-result" id="bm-budget-result"></div>
+      </div>
+
+      <div class="bm-card">
+        <h3>My House Requirements</h3>
+
+        <label>Bedrooms</label>
+        <input id="bm-bedrooms" type="number" value="2">
+
+        <label>Bathrooms</label>
+        <input id="bm-bathrooms" type="number" value="2">
+
+        <label>Kitchen</label>
+        <select id="bm-kitchen">
+          <option>Open Kitchen</option>
+          <option>Closed Kitchen</option>
+        </select>
+
+        <label>Other requirements</label>
+        <textarea id="bm-requirements"
+          placeholder="Parking, balcony, garden, pooja room..."></textarea>
+
+        <button onclick="BM.houseBrief()">Create House Brief</button>
+        <div class="bm-result" id="bm-house-result"></div>
+      </div>
+
+      <div class="bm-card">
+        <h3>Construction Checklist</h3>
+        <div id="bm-checklist"></div>
+        <button class="bm-dark" onclick="BM.resetChecklist()">
+          Reset Checklist
+        </button>
+      </div>
+    </div>
+
+    <p class="bm-small">
+      Budget calculations are preliminary estimates, not contractor
+      quotations. Actual costs depend on local rates, design, soil,
+      structure, approvals, taxes and finishing.
+    </p>
+  </section>
+
+  <!-- INTERIOR -->
+  <section class="bm-panel bm-hide" id="bm-interior">
+    <h2>🛋️ Interior Design Planner</h2>
+    <div class="bm-card">
+      <label>Select Room</label>
+      <select id="bm-room">
+        <option>Living Room</option>
+        <option>Bedroom</option>
+        <option>Kitchen</option>
+        <option>Bathroom</option>
+        <option>Dining Room</option>
+        <option>Kids Room</option>
+        <option>Home Office</option>
+      </select>
+
+      <label>Design Style</label>
+      <select id="bm-style">
+        <option>Modern</option>
+        <option>Minimalist</option>
+        <option>Traditional Indian</option>
+        <option>Luxury</option>
+        <option>Contemporary</option>
+        <option>Industrial</option>
+      </select>
+
+      <label>Budget</label>
+      <select id="bm-interior-budget">
+        <option>Economy</option>
+        <option>Mid-range</option>
+        <option>Premium</option>
+        <option>Not decided</option>
+      </select>
+
+      <label>Preferences</label>
+      <textarea id="bm-interior-notes"
+        placeholder="Colors, furniture, storage requirements..."></textarea>
+
+      <button onclick="BM.interiorBrief()">Create Design Brief</button>
+      <div class="bm-result" id="bm-interior-result"></div>
+    </div>
+  </section>
+
+  <!-- PROFESSIONALS -->
+  <section class="bm-panel bm-hide" id="bm-directory">
+    <h2>👷 Professionals Directory</h2>
+    <input id="bm-pro-search"
+      placeholder="Search professionals..."
+      oninput="BM.renderProfessionals()">
+    <div class="bm-grid" id="bm-professionals"></div>
+  </section>
+
+  <!-- MATERIALS -->
+  <section class="bm-panel bm-hide" id="bm-products">
+    <h2>🧱 Construction Materials Marketplace</h2>
+    <input id="bm-product-search"
+      placeholder="Search materials..."
+      oninput="BM.renderProducts()">
+    <div class="bm-grid" id="bm-product-list"></div>
+  </section>
+
+  <!-- RENTALS -->
+  <section class="bm-panel bm-hide" id="bm-rentals">
+    <h2>🚜 Machinery & Transport Rentals</h2>
+    <div class="bm-grid" id="bm-rental-list"></div>
+
+    <div class="bm-card">
+      <h3>Request Machinery or Transport</h3>
+      <label>Your Name</label>
+      <input id="bm-rent-name">
+
+      <label>Location</label>
+      <input id="bm-rent-city">
+
+      <label>Equipment Required</label>
+      <input id="bm-rent-equipment"
+        placeholder="JCB, Tractor, Truck, Mixer...">
+
+      <label>Dates and Details</label>
+      <textarea id="bm-rent-details"></textarea>
+
+      <button onclick="BM.rentalRequest()">Send WhatsApp Request</button>
+    </div>
+  </section>
+
+  <!-- CUSTOMER ENQUIRY -->
+  <section class="bm-panel bm-hide" id="bm-enquiry">
+    <h2>📩 Customer Requirement Form</h2>
+    <div class="bm-card">
+      <label>Your Name</label>
+      <input id="bm-customer-name">
+
+      <label>City / Area</label>
+      <input id="bm-customer-city">
+
+      <label>What do you need?</label>
+      <select id="bm-customer-type">
+        <option>Construction Materials</option>
+        <option>House Design / Architect</option>
+        <option>Contractor / Labour</option>
+        <option>Interior Design</option>
+        <option>Machinery / Transport</option>
+        <option>Other</option>
+      </select>
+
+      <label>Requirement Details</label>
+      <textarea id="bm-customer-details"></textarea>
+
+      <label>Contact Number (Optional)</label>
+      <input id="bm-customer-phone" inputmode="tel">
+
+      <button onclick="BM.customerRequest()">Prepare WhatsApp Enquiry</button>
+    </div>
+  </section>
+
+  <!-- QUOTE COMPARISON -->
+  <section class="bm-panel bm-hide" id="bm-quotes">
+    <h2>⚖️ Compare Supplier Quotations</h2>
+    <div class="bm-card">
+      <label>Supplier Name</label>
+      <input id="bm-quote-supplier">
+
+      <label>Product / Service</label>
+      <input id="bm-quote-item">
+
+      <label>Quantity</label>
+      <input id="bm-quote-quantity" type="number">
+
+      <label>Rate per Unit (₹)</label>
+      <input id="bm-quote-rate" type="number">
+
+      <label>Delivery Charges (₹)</label>
+      <input id="bm-quote-delivery" type="number" value="0">
+
+      <label>Tax Status</label>
+      <select id="bm-quote-tax">
+        <option>Included</option>
+        <option>Extra</option>
+        <option>Not specified</option>
+      </select>
+
+      <button onclick="BM.addQuote()">Add Quotation</button>
+    </div>
+    <div class="bm-grid" id="bm-quote-list"></div>
+  </section>
+
+  <!-- VENDOR REGISTRATION -->
+  <section class="bm-panel bm-hide" id="bm-vendor">
+    <h2>🏪 Register Your Business</h2>
+    <div class="bm-card">
+      <label>Business Name</label>
+      <input id="bm-vendor-name">
+
+      <label>Business Category</label>
+      <select id="bm-vendor-category">
+        <option>Material Supplier</option>
+        <option>Dealer / Retailer</option>
+        <option>Manufacturer</option>
+        <option>Architect</option>
+        <option>Civil Engineer</option>
+        <option>Contractor</option>
+        <option>Interior Designer</option>
+        <option>Electrician / Plumber</option>
+        <option>Transporter</option>
+        <option>Machinery Rental</option>
+      </select>
+
+      <label>City</label>
+      <input id="bm-vendor-city">
+
+      <label>WhatsApp Number (with country code)</label>
+      <input id="bm-vendor-phone" placeholder="91XXXXXXXXXX">
+
+      <label>Products / Services</label>
+      <textarea id="bm-vendor-services"></textarea>
+
+      <button onclick="BM.addVendor()">Save Business Listing</button>
+      <div class="bm-result" id="bm-vendor-result"></div>
+    </div>
+  </section>
+
+  <div class="bm-card">
+    <h3>BUILDMART Data</h3>
+    <button onclick="BM.exportData()">Export Saved Data</button>
+    <p class="bm-small">
+      Saved vendor listings and quotations are currently stored in
+      this browser only. Public multi-user listings need a shared
+      database and secure backend.
+    </p>
+  </div>
+</div>
+
+<a class="bm-whatsapp" href="#" onclick="BM.quickWhatsApp();return false">
+  WhatsApp
+</a>
+
+<script>
+(function(){
+"use strict";
+
+/* IMPORTANT:
+   Add your official BUILDMART WhatsApp number below.
+   Example format: 919876543210
+*/
+const SUPPORT_WHATSAPP = "";
+
+const KEY = "BUILDMART_EXPANSION_DATA";
+const CHECK_KEY = "BUILDMART_CHECKLIST";
+
+let data;
+try {
+  data = JSON.parse(localStorage.getItem(KEY)) || {
+    vendors: [],
+    quotes: []
+  };
+} catch(e) {
+  data = {vendors:[],quotes:[]};
+}
+
+const $ = id => document.getElementById(id);
+
+function save(){
+  localStorage.setItem(KEY,JSON.stringify(data));
+}
+
+function escapeHTML(value){
+  return String(value ?? "").replace(/[&<>"']/g,c=>({
+    "&":"&amp;",
+    "<":"&lt;",
+    ">":"&gt;",
+    '"':"&quot;",
+    "'":"&#39;"
+  })[c]);
+}
+
+function sendWhatsApp(number,message){
+  const phone = String(number || "").replace(/\D/g,"");
+  if(!phone){
+    alert("WhatsApp number is not configured. Add your official support number in the code.");
+    return;
+  }
+  window.open(
+    "https://wa.me/"+phone+"?text="+encodeURIComponent(message),
+    "_blank"
+  );
+}
+
+const designs = [
+  ["1BHK Compact House","Small plot, practical layout"],
+  ["2BHK Family House","Comfortable family home"],
+  ["3BHK Modern House","Space for a growing family"],
+  ["4BHK Spacious House","Larger family layout"],
+  ["Village House","Practical rural home ideas"],
+  ["Duplex House","Two-floor home concept"],
+  ["Modern Elevation","Front exterior design ideas"],
+  ["Small Plot House","Space-saving layout"],
+  ["Accessible House","Universal access planning"]
+];
+
+const products = [
+  "Cement","TMT Steel","Bricks","AAC Blocks","Sand","Aggregate",
+  "Tiles","Paint","Putty","Doors","Windows","Pipes","Plumbing",
+  "Electrical Items","Roofing","Waterproofing","Hardware",
+  "Plywood","Sanitaryware","Ready Mix Concrete"
+];
+
+const rentals = [
+  "JCB / Excavator","Tractor / Trolley","Truck / Dumper",
+  "Concrete Mixer","Concrete Pump","Scaffolding",
+  "Crane / Hoist","Plate Compactor","Water Tanker",
+  "Construction Material Delivery"
+];
+
+const checklist = [
+  "Confirm plot ownership and boundaries",
+  "Check local construction rules and approvals",
+  "Discuss requirements with an architect",
+  "Arrange site and soil assessment if required",
+  "Review structural drawings with an engineer",
+  "Prepare BOQ and itemized quotations",
+  "Check material grades and delivery terms",
+  "Agree contractor scope and milestones in writing",
+  "Plan electrical, water and drainage services",
+  "Keep work inspection and payment records"
+];
+
+function renderDesigns(){
+  $("bm-design-list").innerHTML = designs.map((d,i)=>`
+    <div class="bm-card">
+      <span class="bm-tag">DESIGN IDEA</span>
+      <h3>${escapeHTML(d[0])}</h3>
+      <p class="bm-small">${escapeHTML(d[1])}</p>
+      <button onclick="BM.designEnquiry(${i})">Request This Design</button>
+    </div>
+  `).join("");
+}
+
+function renderProducts(){
+  const q = ($("bm-product-search").value || "").toLowerCase();
+  $("bm-product-list").innerHTML = products
+    .filter(p=>p.toLowerCase().includes(q))
+    .map(p=>`
+      <div class="bm-card">
+        <h3>${escapeHTML(p)}</h3>
+        <p class="bm-small">Ask a supplier for current brand, grade, stock, rate and delivery.</p>
+        <button onclick="BM.productEnquiry('${p}')">Request Price</button>
+      </div>
+    `).join("");
+}
+
+function renderRentals(){
+  $("bm-rental-list").innerHTML = rentals.map(r=>`
+    <div class="bm-card">
+      <h3>${escapeHTML(r)}</h3>
+      <p class="bm-small">Request availability, rental rate and delivery details.</p>
+      <button onclick="BM.chooseRental('${r}')">Select Equipment</button>
+    </div>
+  `).join("");
+}
+
+function renderProfessionals(){
+  const q = ($("bm-pro-search").value || "").toLowerCase();
+  const list = data.vendors.filter(v=>
+    (v.name+" "+v.category+" "+v.city+" "+v.services)
+      .toLowerCase().includes(q)
+  );
+
+  $("bm-professionals").innerHTML = list.map(v=>`
+    <div class="bm-card">
+      <span class="bm-tag">${escapeHTML(v.category)}</span>
+      <h3>${escapeHTML(v.name)}</h3>
+      <p>${escapeHTML(v.city)}</p>
+      <p class="bm-small">${escapeHTML(v.services)}</p>
+      <button onclick="BM.contactVendor('${v.phone}','${escapeHTML(v.name)}')">
+        WhatsApp Contact
+      </button>
+    </div>
+  `).join("") || "<p>No listings saved on this device yet.</p>";
+}
+
+function renderQuotes(){
+  $("bm-quote-list").innerHTML = data.quotes.map((q,i)=>`
+    <div class="bm-card">
+      <h3>${escapeHTML(q.supplier)}</h3>
+      <p>${escapeHTML(q.item)} — ${q.quantity} units</p>
+      <p>Rate: ₹${q.rate.toLocaleString("en-IN")}</p>
+      <p>Delivery: ₹${q.delivery.toLocaleString("en-IN")}</p>
+      <b>Total before any extra tax: ₹${(q.quantity*q.rate+q.delivery).toLocaleString("en-IN")}</b>
+      <p class="bm-small">Tax: ${escapeHTML(q.tax)}</p>
+      <button class="bm-dark" onclick="BM.deleteQuote(${i})">Remove</button>
+    </div>
+  `).join("") || "<p>No quotations added yet.</p>";
+}
+
+function renderChecklist(){
+  let checked = [];
+  try { checked = JSON.parse(localStorage.getItem(CHECK_KEY)) || []; }
+  catch(e) {}
+
+  $("bm-checklist").innerHTML = checklist.map((item,i)=>`
+    <label style="display:flex;gap:8px;margin:10px 0">
+      <input type="checkbox" data-index="${i}"
+        style="width:auto;margin:0"
+        ${checked.includes(i)?"checked":""}>
+      ${escapeHTML(item)}
+    </label>
+  `).join("");
+
+  $("bm-checklist").onchange = function(){
+    const selected = [...this.querySelectorAll("input:checked")]
+      .map(c=>Number(c.dataset.index));
+    localStorage.setItem(CHECK_KEY,JSON.stringify(selected));
+  };
+}
+
+window.BM = {
+  go(section){
+    document.querySelectorAll("#bm-expansion .bm-panel")
+      .forEach(p=>p.classList.add("bm-hide"));
+    const target = $("bm-"+section);
+    if(target) target.classList.remove("bm-hide");
+    document.querySelector("#bm-expansion .bm-tabs")
+      .scrollIntoView({behavior:"smooth",block:"start"});
+  },
+
+  budget(){
+    const area = Number($("bm-area").value);
+    const rate = Number($("bm-rate").value);
+    const floors = Number($("bm-floors").value);
+    const extra = Number($("bm-extra").value);
+
+    if(area<=0 || rate<=0 || extra<0 || extra>100){
+      alert("Please enter valid area, rate and allowance.");
+      return;
+    }
+
+    const base = area*rate*floors;
+    const total = base*(1+extra/100);
+
+    $("bm-budget-result").innerHTML =
+      "Base estimate: ₹"+base.toLocaleString("en-IN")+
+      "<br>Extra allowance: ₹"+(total-base).toLocaleString("en-IN")+
+      "<br><b>Estimated total: ₹"+total.toLocaleString("en-IN")+"</b>";
+  },
+
+  houseBrief(){
+    const msg =
+      "House requirements: "+$("bm-bedrooms").value+" bedrooms, "+
+      $("bm-bathrooms").value+" bathrooms, "+
+      $("bm-kitchen").value+". Other requirements: "+
+      $("bm-requirements").value;
+
+    $("bm-house-result").innerHTML =
+      escapeHTML(msg)+
+      '<br><button onclick="BM.shareText(\'house\')">Share on WhatsApp</button>';
+
+    this.lastBrief = msg;
+  },
+
+  interiorBrief(){
+    const msg =
+      "Interior design requirement. Room: "+$("bm-room").value+
+      ". Style: "+$("bm-style").value+
+      ". Budget: "+$("bm-interior-budget").value+
+      ". Preferences: "+$("bm-interior-notes").value;
+
+    $("bm-interior-result").textContent = msg;
+    this.lastBrief = msg;
+    const btn = document.createElement("button");
+    btn.textContent = "Share on WhatsApp";
+    btn.onclick = ()=>sendWhatsApp(SUPPORT_WHATSAPP,msg);
+    $("bm-interior-result").appendChild(document.createElement("br"));
+    $("bm-interior-result").appendChild(btn);
+  },
+
+  shareText(){
+    sendWhatsApp(SUPPORT_WHATSAPP,this.lastBrief || "Hello BUILDMART");
+  },
+
+  designEnquiry(i){
+    sendWhatsApp(SUPPORT_WHATSAPP,
+      "Hello BUILDMART, I am interested in "+designs[i][0]+
+      ". Please help me connect with an architect.");
+  },
+
+  productEnquiry(p){
+    sendWhatsApp(SUPPORT_WHATSAPP,
+      "Hello, I need "+p+
+      ". Please share current price, brand, grade, stock and delivery details.");
+  },
+
+  chooseRental(r){
+    $("bm-rent-equipment").value = r;
+    BM.go("rentals");
+    $("bm-rent-name").focus();
+  },
+
+  rentalRequest(){
+    const msg =
+      "Machinery / transport enquiry\nName: "+$("bm-rent-name").value+
+      "\nLocation: "+$("bm-rent-city").value+
+      "\nEquipment: "+$("bm-rent-equipment").value+
+      "\nDetails: "+$("bm-rent-details").value;
+
+    if(!$("bm-rent-name").value || !$("bm-rent-equipment").value){
+      alert("Please enter your name and equipment requirement.");
+      return;
+    }
+    sendWhatsApp(SUPPORT_WHATSAPP,msg);
+  },
+
+  customerRequest(){
+    const msg =
+      "BUILDMART CUSTOMER ENQUIRY\n"+
+      "Name: "+$("bm-customer-name").value+
+      "\nCity: "+$("bm-customer-city").value+
+      "\nCategory: "+$("bm-customer-type
+       </body></html>
